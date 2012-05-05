@@ -6,13 +6,14 @@
 
 	<title></title>
 
-	<link rel="stylesheet" media="screen" href="ecran.cs
+	 <link rel="stylesheet" media="screen" href="css/ecran.css">
 </head>
 <body>
 
 <!-- Document -->
 <?php
 	//inclusion du header
+	
 	//inclusion du menu user_tab
 
 	// récupération du paramètre page et inclusion de la bonne interface
