@@ -1,9 +1,9 @@
 <div id="enseignant_accueil">
 	<div id="enseignant_matieres">
-		<!-- onglet gestion des matiéres (1) ? -->
+		<!-- onglet gestion des matiÃ©res (1) ? -->
 		<ul>
 			<li>
-			<!-- requête pour sortir la liste des matiéres accéssible à cet enseignant (2) ? -->
+			<!-- requÃªte pour sortir la liste des matiÃ©res accÃ©ssible Ã  cet enseignant (2) ? -->
 			</li>
 		</ul>
 	</div>
@@ -11,13 +11,13 @@
 		<!-- onglet cours (2) ? ?-->
 		<ul>
 			<li>
-			<!-- requete pour sortir la liste des cours liés à la matiére sélectionner (3) ? -->
-			<!-- un lien apparait sous le cours "gérer" au survol (4) ? -->
+			<!-- requete pour sortir la liste des cours liÃ©s Ã  la matiÃ©re sÃ©lectionner (3) ? -->
+			<!-- un lien apparait sous le cours "gÃ©rer" au survol (4) ? -->
 			</li>
 		</ul>
 	</div>
 	<div id="enseignant_qcm_fichiers">
-		<!-- requete affichant la liste des qcms liés au cours sélectionner (5) ? -->
+		<!-- requete affichant la liste des qcms liÃ©s au cours sÃ©lectionner (5) ? -->
 		<!-- onglet gestion des qcms par fichiers (5) ? -->
 		<ul>
 			<li></li>
@@ -25,7 +25,7 @@
 	</div>
 </div>
 <div id="enseignant_qcm">
-	<!-- 3 balises de type sélection dans une liste déroulante intitulé QCM, Formation et Groupe (6) ? -->
+	<!-- 3 balises de type sÃ©lection dans une liste dÃ©roulante intitulÃ© QCM, Formation et Groupe (6) ? -->
 	<!-- onglet effectuant les qcm(s) (7) ? -->
 		<ul>
 			<li>
@@ -52,19 +52,19 @@
 				</select>
 				<?php
 					echo "<table>";
-					echo "<tr><td>Intitulé de la proposition</td><td>Points</td></tr>";
-					echo "<tr><td>intitulé de la poposition1</td><td>Points associé à la proposition</td></tr>";
-					//bien entendu tout cela etant gérer par la base de données et le tableau etant générer
-					//dynamiquement par l'utilisation de la base de données
+					echo "<tr><td>IntitulÃ© de la proposition</td><td>Points</td></tr>";
+					echo "<tr><td>intitulÃ© de la poposition1</td><td>Points associÃ© Ã  la proposition</td></tr>";
+					//bien entendu tout cela etant gÃ©rer par la base de donnÃ©es et le tableau etant gÃ©nÃ©rer
+					//dynamiquement par l'utilisation de la base de donnÃ©es
 					echo "</table>";
 				?>
-				<!-- création des boutons "ajouter proposition" qui est plus un lien, "supprimer question", "enregistrer qcm",
+				<!-- crÃ©ation des boutons "ajouter proposition" qui est plus un lien, "supprimer question", "enregistrer qcm",
 				"supprimer QCM" (8) ? -->
 			</li>
 		</ul>
 </div>
 <div id="enseignant_resultats">
-	<!-- Consultation des résultats (9) ? -->
+	<!-- Consultation des rÃ©sultats (9) ? -->
 	<ul>
 		<li></li>
 	</ul>
