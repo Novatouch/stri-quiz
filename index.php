@@ -14,6 +14,7 @@
 <?php
 
 	//recuperation variable passé par l'adresse 
+	//penser à introduire une condition concernant les variables de sessions
 	if (isset($_GET['page']))
 	{
 		$variable = $_GET['page'];
