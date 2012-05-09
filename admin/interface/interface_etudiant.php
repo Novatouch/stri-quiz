@@ -22,7 +22,10 @@
 		</div>
 		<div id="etudiant_qcm_fichiers">
 		<!-- onglet gestion des qcms par fichiers (3) ? -->
-			<ul>
+			<ul id="fichiers">
+				<li></li>
+			</ul>
+			<ul id="qcm">
 				<li></li>
 			</ul>
 		</div>
