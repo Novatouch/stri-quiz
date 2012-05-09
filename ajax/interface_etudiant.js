@@ -51,9 +51,13 @@ $(function(){
 	// paramètre POST id_cours
 
 	// récupère objet JSON
-	// vide la liste des cours
-	// remplit la liste des cours
-	// <li id=".." ></li>
+	// vide la liste des QCM
+	// remplit la liste des QCM
+	// <li id=".." >nom QCM</li>
+
+	// vide la liste des fichiers
+	// remplit la liste des fichiers
+	// <li id=".." >nom Fichier</li>
 	});
 
 
@@ -74,5 +78,6 @@ $(function(){
 	// Affichage question et propostions
 	// id + texte
 
-	// ajout d'un bouton de validation du 
+	// ajout d'un bouton de validation du QCM
+	//
 }
