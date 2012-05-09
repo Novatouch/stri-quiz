@@ -62,22 +62,26 @@ $(function(){
 
 
 
-	//fonction déclechée par un clic sur un QCM
+	//fonction déclenché par un clic sur un QCM
 	// elle chargera le QCM
 	$('à définir').live('click',function(){
 	
-	// récupération des questions et des propositions auprès du serveurp
+	// récupération des questions et des propositions auprès du serveur
 	// id + texte
 	// envoi d'une requête au serveur 
 	// controler : controler_etudiant.php
 	// module :	lister_questions_propositions_qcm
 	// paramètre: id_qcm
 
-	// affichage du div ayant l'id "etudiant_qcm"
+	// Récupération objet JSON
 
-	// Affichage question et propostions
+	// affichage et vidage du contenu du div ayant l'id "etudiant_qcm"
+
+	// Affichage questions et propostions
 	// id + texte
+	// format: 
 
 	// ajout d'un bouton de validation du QCM
-	//
+	// <input type="submit" name="Valider" id="Valider" />
+	});
 }
