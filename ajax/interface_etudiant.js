@@ -84,4 +84,14 @@ $(function(){
 	// ajout d'un bouton de validation du QCM
 	// <input type="submit" name="Valider" id="Valider" />
 	});
+
+	//fonction déclenché par un clic sur un Fichier
+	// elle lancera le téléchargement du fichier
+	$('à définir').live('click',function(){
+	});
+
+	//fonction déclenché par par la validation du QCM
+	//  récupère les propositions cochés envoi au serveur les données et recoit la note
+	$('à définir').live('click',function(){
+	});
 }
