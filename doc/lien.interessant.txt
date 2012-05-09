@@ -1,0 +1,1 @@
+http://www.hooba.ca/blog/2008/echange-dobjets-json-entre-php-et-javascript-facile-grace-a-jquery/
