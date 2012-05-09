@@ -35,6 +35,14 @@
 			include_once("modules/etudiant/lister_questions_propositions_qcm.php");
 
 		break;
+		case "telechargement_fichier" :
+			include_once("modules/etudiant/telechargement_fichier.php");
+
+		break;
+		case "verification_qcm" :
+			include_once("modules/etudiant/verification_qcm.php");
+
+		break;
 		default :
 
 		break;
