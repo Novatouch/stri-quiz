@@ -1,1 +1,6 @@
 http://www.hooba.ca/blog/2008/echange-dobjets-json-entre-php-et-javascript-facile-grace-a-jquery/
+
+
+PHP telechargement fichier:
+
+http://www.destrucsaweb.com/ressources/phpmyannu/goto_45.php
