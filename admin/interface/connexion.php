@@ -1,5 +1,5 @@
 <div id="interface_connexion-formulaire">
-	<form>
+	<form method="post" action="../admin/controler/authentification.php?module=connexion">
 		<p>
 			<label for="identifiant">Idantifiant :</label>
 			<input type="text" name="identifiant" id="identifiant" />
