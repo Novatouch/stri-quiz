@@ -1,6 +1,8 @@
 
 <?php
 
+	// demarrage des sessions php
+	
 	// securisation des variables GET et POST
 
 	// récupération du nom du module stocké dans $_POST['module']
