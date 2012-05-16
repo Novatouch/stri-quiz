@@ -1,7 +1,7 @@
 
 Utilisateurs(idUtilisateur,nomU,prenomU,pseudo,passwordU,typeCompte)
 
-Groupes(idGroupe,nomG,promotion,avoirCours)
+Groupes(idGroupe,nomG,promotion,avoirCours,nomU)
 
 Formations(idFormation,nomF,promotion,nomM)
 

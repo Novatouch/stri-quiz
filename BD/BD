@@ -28,7 +28,8 @@ CREATE TABLE Groupes
 	idGroupe int CONSTRAINT cle_groupe PRIMARY KEY,
 	nomG	VARCHAR(25),
 	promotion VARCHAR(25),
-	avoirCours	VARCHAR(10) /*clé étrangére de cours*/
+	avoirCours	VARCHAR(10) /*clé étrangére de cours*/,
+	CONSTAINT fk_nomU FOREIGN KEY(nomU) REFERENCES Utilisateurs(nomU)
 );  
 
 CREATE TABLE Formations
