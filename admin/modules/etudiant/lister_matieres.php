@@ -9,4 +9,9 @@
 // requête à la base de donnée 
 
 // traitement des résultats et fabrication de l'objet JSON
+/*
+ $matieres[0]['id'] = 1;
+ $matieres[0]['nom'] = "NomMatière";
+*/
+echo json_encode($matieres);
 ?>
