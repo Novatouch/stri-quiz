@@ -4097,7 +4097,7 @@
 <XPD:ATTR name="Left" type="integer">528</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">88</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">70</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">1190</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">1229</XPD:ATTR>
 <XPD:REF name="Model">7d7X59lsi0Cwt2p5M+3+pQAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="SPQzo11FiUaFuygKJwbBJQAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="BNj0PZSSgkSHCCyDDKUqdgAA">
