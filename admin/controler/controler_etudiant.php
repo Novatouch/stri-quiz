@@ -27,8 +27,12 @@
 			include_once("modules/etudiant/lister_cours.php");
 
 		break;
-		case "lister_QCM_fichiers" :
-			include_once("modules/etudiant/lister_cours.php");
+		case "lister_QCM" :
+			include_once("modules/etudiant/lister_QCM.php");
+
+		break;
+		case "lister_fichiers" :
+			include_once("modules/etudiant/lister_fichiers.php");
 
 		break;
 		case "lister_questions_propositions_qcm" :

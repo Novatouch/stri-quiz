@@ -1,0 +1,151 @@
+********Création de la base de données*******
+
+-- Database: "BD_PROJET"
+
+-- DROP DATABASE "BD_PROJET";
+
+CREATE DATABASE "BD_PROJET"
+  WITH OWNER = postgres
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'French_France.1252'
+       LC_CTYPE = 'French_France.1252'
+       CONNECTION LIMIT = -1;
+
+
+CREATE TABLE Utilisateurs
+(
+	idUtilisateur int CONSTRAINT cle_util PRIMARY KEY,
+	nomU	VARCHAR(25),
+	prenomU  VARCHAR(25),
+	pseudo	VARCHAR(20),
+	passwordU VARCHAR (1000), /*On laisse la place pour crypter le mot de passe*/
+	CHECK(typeCompte='Enseignant' OR typeCompte='Etudiant' OR typeCompte='Administrateur')
+);  
+
+CREATE TABLE Groupes
+(
+	idGroupe int CONSTRAINT cle_groupe PRIMARY KEY,
+	nomG	VARCHAR(25),
+	promotion VARCHAR(25),
+	avoirCours	VARCHAR(10) /*clé étrangére de cours*/,
+	CONSTAINT fk_nomU FOREIGN KEY(nomU) REFERENCES Utilisateurs(nomU)
+);  
+
+CREATE TABLE Formations
+(
+	idFormation int CONSTRAINT cle_formation PRIMARY KEY,
+	nomF	VARCHAR(25),
+	promotion VARCHAR(20),
+	nomM VARCHAR(20)
+);  
+
+CREATE TABLE Matieres
+(
+	idMatiere int CONSTRAINT cle_matiere PRIMARY KEY,
+	nomM	VARCHAR(25),
+	promotion VARCHAR(20),
+	CONSTAINT fk_nomC FOREIGN KEY(nomC) REFERENCES Cours(nomC)
+);  
+
+
+CREATE TABLE Fichiers
+(
+	idFichier int CONSTRAINT cle_fichier PRIMARY KEY,
+	nomF	VARCHAR(25),
+	lien VARCHAR(200),
+	CONSTAINT fk_nomC FOREIGN KEY(nomC) REFERENCES Cours(nomC)
+);  
+
+CREATE TABLE Propositions
+(
+	idProposition int CONSTRAINT cle_proposition PRIMARY KEY,
+	intituleProp	VARCHAR(25),
+	CHECK(point='0' OR point='1' OR point='-1')
+);  
+
+CREATE TABLE Questions
+(
+	idQuestion int CONSTRAINT cle_question PRIMARY KEY,
+	intituleQ	VARCHAR(25),
+	CHECK(exact='true' OR exact='false'),
+	CONSTAINT fk_intituleProp FOREIGN KEY(intituleProp) REFERENCES Propositions(intituleProp)
+);  
+
+CREATE TABLE Quizz
+(
+	idQuizz int CONSTRAINT cle_quizz PRIMARY KEY,
+	nomQ	VARCHAR(25),
+	CHECK(typeQuizz='' OR typeQuizz='' OR typeQuizz='') /*Tu peux trouver le domaine de valeurs stp j'ai pas la moindre idéé*/,
+	tempsEpreuve int,
+	passwordQ	VARCHAR(100),
+	difficulte	int
+);  
+
+CREATE TABLE Cours
+(
+	idCours int CONSTRAINT cle_cours PRIMARY KEY,
+	nomC	VARCHAR(25),
+	CONSTAINT fk_nomQ FOREIGN KEY(nomQ) REFERENCES Quizz(nomQ)
+);  
+
+CREATE TABLE ContenirQuestion
+(
+	CONSTAINT fk_nomQ FOREIGN KEY(nomQ) REFERENCES Quizz(nomQ),
+	CONSTAINT fk_intituleQ FOREIGN KEY(intituleQ) REFERENCES Questions(intituleQ),
+	CONSTAINT pk_contenirquestion PRIMARY KEY (nomQ,intituleQ)
+);
+
+
+CREATE TABLE Participer
+(
+	CONSTAINT fk_nomQ FOREIGN KEY(nomQ) REFERENCES Quizz(nomQ),
+	CONSTAINT fk_nomU FOREIGN KEY(nomU) REFERENCES Utilisateurs(nomU),
+	CONSTAINT pk_idP PRIMARY KEY (nomQ,nomU)
+);
+
+CREATE TABLE AppartenirGroupe
+(
+	CONSTAINT fk_nomG FOREIGN KEY(nomG) REFERENCES Groupes(nomG),
+	CONSTAINT fk_nomU FOREIGN KEY(nomU) REFERENCES Utilisateurs(nomU),
+	CONSTAINT pk_appartenirgroupe PRIMARY KEY (nomG,nomU)
+);
+
+CREATE TABLE AppartenirFormation
+(
+	CONSTAINT fk_nomF FOREIGN KEY(nomF) REFERENCES Formations(nomF),
+	CONSTAINT fk_nomG FOREIGN KEY(nomG) REFERENCES Groupes(nomG),
+	CONSTAINT pk_appartenirformation PRIMARY KEY (nomF,nomG)
+);
+
+CREATE TABLE Acceder
+(
+	CONSTAINT fk_nomM FOREIGN KEY(nomM) REFERENCES Matieres(nomM),
+	CONSTAINT fk_nomF FOREIGN KEY(nomF) REFERENCES Formations(nomF),
+	CONSTAINT pk_acceder PRIMARY KEY (nomF,nomM)
+);
+
+CREATE TABLE Gerer
+(
+	CONSTAINT fk_nomM FOREIGN KEY(nomM) REFERENCES Matieres(nomM),
+	CONSTAINT fk_nomU FOREIGN KEY(nomU) REFERENCES Utilisateurs(nomU),
+	CONSTAINT pk_gerer PRIMARY KEY (nomU,nomM)
+);
+
+CREATE TABLE Avoir
+(
+	CONSTAINT fk_nomG FOREIGN KEY(nomG) REFERENCES Groupes(nomG),
+	CONSTAINT fk_nomC FOREIGN KEY(nomC) REFERENCES Cours(nomC),
+	CONSTAINT pk_avoir PRIMARY KEY (nomG,nomC),
+	CHECK(etreVisible='true' OR etreVisible='false')  
+);
+
+CREATE TABLE Cocher
+(
+	CONSTAINT fk_nomQ FOREIGN KEY(nomQ) REFERENCES Quizz(nomQ),
+	CONSTAINT fk_intituleProp FOREIGN KEY(intituleProp) REFERENCES Propositions(intituleProp),
+	CONSTAINT fk_pk_idP FOREIGN KEY(pk_idP) REFERENCES Participer(pk_idP),
+	CONSTAINT pk_cocher PRIMARY KEY (nomQ,intituleProp,pk_idP),
+	nbFois int
+);
+

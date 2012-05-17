@@ -47,13 +47,16 @@ $(function(){
 	// vérifie si un cours était déjà sélectionné et enlève les propriétés CSS
 	// modifier les paramètres CSS du cours sélectionné pour le mettre en évidence
 
-	// fait une requète ajax au controler controler_etudiant.php et au module lister_QCM_fichiers
+	// fait une requète ajax au controler controler_etudiant.php et au module lister_QCM
 	// paramètre POST id_cours
 
 	// récupère objet JSON
 	// vide la liste des QCM
 	// remplit la liste des QCM
 	// <li id=".." >nom QCM</li>
+
+
+	// fait une requète ajax au controler controler_etudiant.php et au module lister_fichiers
 
 	// vide la liste des fichiers
 	// remplit la liste des fichiers
@@ -93,5 +96,8 @@ $(function(){
 	//fonction déclenché par par la validation du QCM
 	//  récupère les propositions cochés envoi au serveur les données et recoit la note
 	$('à définir').live('click',function(){
+		
+		//format des données à envoyer
+		// {"id_qcm":6,"question":[{"id":5,"proposition":[{"id":1},{"id":2}]},{"id":5,"proposition":[{"id":1},{"id":2}]} ]}
 	});
 }

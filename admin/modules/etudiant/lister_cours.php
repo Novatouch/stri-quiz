@@ -10,4 +10,9 @@
 // requête à la base de donnée 
 
 // traitement des résultats et fabrication de l'objet JSON
+/*
+ $cours[0]['id'] = 1;
+ $cours[0]['nom'] = "NomMatière";
+*/
+ echo json_encode($cours);
 ?>
