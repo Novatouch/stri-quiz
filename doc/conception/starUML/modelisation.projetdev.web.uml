@@ -176,8 +176,8 @@
 <XPD:OBJ name="OwnedViews[3]" type="UMLSeqObjectView" guid="eLqJCPSl0EuIuZ3t7g3sIwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">408</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">24</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">412</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">36</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">70</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">917</XPD:ATTR>
 <XPD:REF name="Model">7paocixZj02K7f75eRFikwAA</XPD:REF>
@@ -1194,7 +1194,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="rqbU7WP01E2GwOiv9clQjQAA">
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">3 : appel module :lister_matieres()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">3 : appel controler: controler_etudiant module :lister_matieres()</XPD:ATTR>
 <XPD:REF name="Model">P10ikYNnm0i6o4HnO3uY8gAA</XPD:REF>
 <XPD:REF name="HostEdge">xG4qyoPacEmr6IO/fMpxhwAA</XPD:REF>
 </XPD:OBJ>
@@ -1484,7 +1484,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="BJSvRa+Ci0a9bKRmkgO0SAAA">
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">11 : appel module lister_cours param: idMatiere()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">11 : appel controler: controler_etudiant module lister_cours param: idMatiere()</XPD:ATTR>
 <XPD:REF name="Model">Dlds1McE/0eZtua1oixqxQAA</XPD:REF>
 <XPD:REF name="HostEdge">4Vj3k+GH1E2PdfrpwhmV4AAA</XPD:REF>
 </XPD:OBJ>
@@ -1665,7 +1665,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="L58LuKRAO0ioPwrKXdH5lwAA">
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">16 : appel module: lister_ficheirs param: idCours()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">16 : appel controler: controler_etudiant module: lister_ficheirs param: idCours()</XPD:ATTR>
 <XPD:REF name="Model">QL+/fVwVAkuvDlN6R+nCwAAA</XPD:REF>
 <XPD:REF name="HostEdge">MW23MoEzK0GZqoqgAX8p5gAA</XPD:REF>
 </XPD:OBJ>
@@ -1994,7 +1994,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="hdFpytU16kei/4NHDG305AAA">
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">25 : appel module lister_qcm param:idCours()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">25 : appel controler :controler_etudiant  module lister_qcm param:idCours()</XPD:ATTR>
 <XPD:REF name="Model">o0CPkcib90CA3eI1no3jHQAA</XPD:REF>
 <XPD:REF name="HostEdge">70MyNG8xHEWNCjSUMF0TvQAA</XPD:REF>
 </XPD:OBJ>
@@ -3043,9 +3043,9 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">1100,2001;87,2001</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">1100,2011;331,2011</XPD:ATTR>
 <XPD:REF name="Model">Sa/myvfjwkOImYhSfGad5wAA</XPD:REF>
-<XPD:REF name="Head">zLQN/83RZ0iMeuRI+pI4vgAA</XPD:REF>
+<XPD:REF name="Head">W7CvVn1mVEufai02o/BZSwAA</XPD:REF>
 <XPD:REF name="Tail">pnTM7MvT50i6P80Cy85yJQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="KPAFHR3FakKaeSwQZjN8lAAA">
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
@@ -3070,8 +3070,8 @@
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="MJzOx4hDNkOBku8x2NMm8wAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">87</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">2001</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">331</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">2011</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
@@ -3108,7 +3108,7 @@
 <XPD:REF name="Views[3]">y7quf842hEGQwEmIiNIPIwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[2]" type="UMLStimulus" guid="P10ikYNnm0i6o4HnO3uY8gAA">
-<XPD:ATTR name="Name" type="string">appel module :lister_matieres</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">appel controler: controler_etudiant module :lister_matieres</XPD:ATTR>
 <XPD:REF name="Sender">7d7X59lsi0Cwt2p5M+3+pQAA</XPD:REF>
 <XPD:REF name="Receiver">K/Skb0hCOkSBulmmxqaE9QAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLCallAction" guid="SZva/Xn4ykesqLyk0m+HFwAA">
@@ -3220,7 +3220,7 @@
 <XPD:REF name="Views[3]">gSYKVE8cvU+AbTIGrJEZOAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[10]" type="UMLStimulus" guid="Dlds1McE/0eZtua1oixqxQAA">
-<XPD:ATTR name="Name" type="string">appel module lister_cours param: idMatiere</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">appel controler: controler_etudiant module lister_cours param: idMatiere</XPD:ATTR>
 <XPD:REF name="Sender">7d7X59lsi0Cwt2p5M+3+pQAA</XPD:REF>
 <XPD:REF name="Receiver">K/Skb0hCOkSBulmmxqaE9QAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLCallAction" guid="mhxz6y57OkGDKKIEit+qmQAA">
@@ -3290,7 +3290,7 @@
 <XPD:REF name="Views[3]">xaP8iNB0VE+NhXw3LtmGrQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[15]" type="UMLStimulus" guid="QL+/fVwVAkuvDlN6R+nCwAAA">
-<XPD:ATTR name="Name" type="string">appel module: lister_ficheirs param: idCours</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">appel controler: controler_etudiant module: lister_ficheirs param: idCours</XPD:ATTR>
 <XPD:REF name="Sender">7d7X59lsi0Cwt2p5M+3+pQAA</XPD:REF>
 <XPD:REF name="Receiver">K/Skb0hCOkSBulmmxqaE9QAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLCallAction" guid="Q2ITTHw39kiwKGnUhTdYJgAA">
@@ -3416,7 +3416,7 @@
 <XPD:REF name="Views[3]">Y8nkaPuF0ESPs7q0N8Hl2AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[24]" type="UMLStimulus" guid="o0CPkcib90CA3eI1no3jHQAA">
-<XPD:ATTR name="Name" type="string">appel module lister_qcm param:idCours</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">appel controler :controler_etudiant  module lister_qcm param:idCours</XPD:ATTR>
 <XPD:REF name="Sender">7d7X59lsi0Cwt2p5M+3+pQAA</XPD:REF>
 <XPD:REF name="Receiver">K/Skb0hCOkSBulmmxqaE9QAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLCallAction" guid="eUP/XHJp8U+1RhBefvLjVwAA">
@@ -3824,7 +3824,7 @@
 <XPD:OBJ name="ParticipatingStimuli[53]" type="UMLStimulus" guid="Sa/myvfjwkOImYhSfGad5wAA">
 <XPD:ATTR name="Name" type="string">redirection et téléchargement</XPD:ATTR>
 <XPD:REF name="Sender">K/Skb0hCOkSBulmmxqaE9QAA</XPD:REF>
-<XPD:REF name="Receiver">9VCiBCpk8kajNPGw4+gluQAA</XPD:REF>
+<XPD:REF name="Receiver">ptrr/CSLgEmvzI0TJBaeJQAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLReturnAction" guid="OD+KqNk1fE2BeOkItamOKwAA">
 <XPD:REF name="Stimulus">Sa/myvfjwkOImYhSfGad5wAA</XPD:REF>
 </XPD:OBJ>
@@ -3929,7 +3929,7 @@
 <XPD:REF name="Model">XqsWwaLP0E2h13RZ9pTU7QAA</XPD:REF>
 <XPD:REF name="ContainerView">5OUVBLK6+EG0Y42y+mva/gAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="1Zkof5mms0SAiiwQShpVRwAA">
-<XPD:ATTR name="Text" type="string">[typeCompte = examen]</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">[typeQCM = examen]</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -3961,7 +3961,7 @@
 <XPD:REF name="Model">kgFAHBiKzUePkVtdZkXVjQAA</XPD:REF>
 <XPD:REF name="ContainerView">3wX93kyM0UaNqskvLYUiQgAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="bwOZHBG5/UiJdPuf09iRqAAA">
-<XPD:ATTR name="Text" type="string">[typeCompte = examen]</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">[typeQCM = examen]</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -4232,9 +4232,9 @@
 <XPD:REF name="Head">jJU3AjhKVkuIqJPN1YapBQAA</XPD:REF>
 <XPD:REF name="Tail">lbn6KWHOQUiWW5BeVQa/iwAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="+3F+hQ6smU6Srp3xAjn4KAAA">
-<XPD:ATTR name="Alpha" type="real">0,107278847459353</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">130,751673029449</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">4 : module: calculer_note_qcm variable idQuiz +  idQuestion + idProposition()</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">0,285462830896575</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">95,8801335001156</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">4 : controler: controler_etudiant module: verification_qcm variable idQuiz +  idQuestion + idProposition()</XPD:ATTR>
 <XPD:REF name="Model">RrKKDK6W8Uq/X8NX/Nj6zQAA</XPD:REF>
 <XPD:REF name="HostEdge">3Hkin0jioEuAnob41ylauwAA</XPD:REF>
 </XPD:OBJ>
@@ -4670,7 +4670,7 @@
 <XPD:REF name="Views[3]">cHztic1qOUaWkb6wPq5rNwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[3]" type="UMLStimulus" guid="RrKKDK6W8Uq/X8NX/Nj6zQAA">
-<XPD:ATTR name="Name" type="string">module: calculer_note_qcm variable idQuiz +  idQuestion + idProposition</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">controler: controler_etudiant module: verification_qcm variable idQuiz +  idQuestion + idProposition</XPD:ATTR>
 <XPD:REF name="Sender">7d7X59lsi0Cwt2p5M+3+pQAA</XPD:REF>
 <XPD:REF name="Receiver">K/Skb0hCOkSBulmmxqaE9QAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLCallAction" guid="idLNYjs/kEi4Icxe90EvXQAA">
@@ -4847,7 +4847,7 @@
 <XPD:ATTR name="#Operands" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Operands[0]" type="UMLInteractionOperand" guid="XqsWwaLP0E2h13RZ9pTU7QAA">
 <XPD:ATTR name="Name" type="string">InteractionOperand1</XPD:ATTR>
-<XPD:ATTR name="Guard" type="string">typeCompte = examen</XPD:ATTR>
+<XPD:ATTR name="Guard" type="string">typeQCM = examen</XPD:ATTR>
 <XPD:REF name="CombinedFragment">t5XQUXjQoEC1KiOUg+j3jAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
 <XPD:REF name="Views[0]">Cu0ohNnr+U+VSbdTbWPoxgAA</XPD:REF>
@@ -4864,7 +4864,7 @@
 <XPD:ATTR name="#Operands" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Operands[0]" type="UMLInteractionOperand" guid="kgFAHBiKzUePkVtdZkXVjQAA">
 <XPD:ATTR name="Name" type="string">InteractionOperand1</XPD:ATTR>
-<XPD:ATTR name="Guard" type="string">typeCompte = examen</XPD:ATTR>
+<XPD:ATTR name="Guard" type="string">typeQCM = examen</XPD:ATTR>
 <XPD:REF name="CombinedFragment">EUEN3g17A061E/hRCr1CTgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
 <XPD:REF name="Views[0]">0a3n8x7UxkiVP7oe3TQsqAAA</XPD:REF>
@@ -5007,7 +5007,7 @@
 <XPD:REF name="SendingStimuli[3]">pWYFpt3ij06Le8VMJVwftwAA</XPD:REF>
 <XPD:REF name="SendingStimuli[4]">ZNObFsRPIECymOUiXH9CvAAA</XPD:REF>
 <XPD:REF name="SendingStimuli[5]">do+nIq48T0mQfFR2SMpIFQAA</XPD:REF>
-<XPD:ATTR name="#ReceivingStimuli" type="integer">18</XPD:ATTR>
+<XPD:ATTR name="#ReceivingStimuli" type="integer">19</XPD:ATTR>
 <XPD:REF name="ReceivingStimuli[0]">n1l/iLBv40u1dOxcwjjnIgAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[1]">FQ3PT/B9sU2qg5vr2h0ORQAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[2]">ZCUI7eHGlUq+IN4HqYhXUgAA</XPD:REF>
@@ -5026,6 +5026,7 @@
 <XPD:REF name="ReceivingStimuli[15]">IwJ8KmitU0eCkWH9sMIK8AAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[16]">GTEAzTpxvEWmwUrZbMP7GQAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[17]">n1srpaFKZkqtLPxH3jZHhQAA</XPD:REF>
+<XPD:REF name="ReceivingStimuli[18]">Sa/myvfjwkOImYhSfGad5wAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingInstances[3]" type="UMLObject" guid="7d7X59lsi0Cwt2p5M+3+pQAA">
 <XPD:ATTR name="Name" type="string">javascript</XPD:ATTR>
@@ -5078,8 +5079,6 @@
 <XPD:REF name="SendingStimuli[2]">nu953aJ0jEWR8VMrOKzZtgAA</XPD:REF>
 <XPD:REF name="SendingStimuli[3]">RT1zI/cOWEmoNEy8QQiv8wAA</XPD:REF>
 <XPD:REF name="SendingStimuli[4]">3dANvp2/eEi13PxdvbftDgAA</XPD:REF>
-<XPD:ATTR name="#ReceivingStimuli" type="integer">1</XPD:ATTR>
-<XPD:REF name="ReceivingStimuli[0]">Sa/myvfjwkOImYhSfGad5wAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingInstances[5]" type="UMLObject" guid="gDK5TPZiL0S4mkjmXQHc4AAA">
 <XPD:REF name="Classifier">Drgvg2M6o0K3m/QsBMx8zwAA</XPD:REF>
