@@ -1,5 +1,6 @@
 <div id="enseignant_accueil">
-	<div id="enseignant_matieres">
+
+	<div id="enseignant_cours">
 		<!-- onglet gestion des matiéres (1) ? -->
 		<ul>
 			<li>
@@ -7,7 +8,7 @@
 			</li>
 		</ul>
 	</div>
-	<div id="enseignant_cours">
+	<div id="enseignant_qcm">
 		<!-- onglet cours (2) ? ?-->
 		<ul>
 			<li>
@@ -16,7 +17,7 @@
 			</li>
 		</ul>
 	</div>
-	<div id="enseignant_qcm_fichiers">
+	<div id="enseignant_fichiers">
 		<!-- requete affichant la liste des qcms liés au cours sélectionner (5) ? -->
 		<!-- onglet gestion des qcms par fichiers (5) ? -->
 		<ul>
@@ -24,44 +25,191 @@
 		</ul>
 	</div>
 </div>
-<div id="enseignant_qcm">
-	<!-- 3 balises de type sélection dans une liste déroulante intitulé QCM, Formation et Groupe (6) ? -->
-	<!-- onglet effectuant les qcm(s) (7) ? -->
-		<ul>
-			<li>
-				<?php
-					echo "<p>QCM</p>";
-				?>
-				<select name="qcm" id="qcm">
-					<option value="qcm1">qcm1</option>
-					<option value="qcm2">qcm2</option>
-				</select>
-				<p>Titre</p>
-				<form> <textarea>Titre</textarea></form>
-				<select name="matiere" id="matiere">
-					<option value="matiere1">matiere1</option>
-					<option value="matiere2">matiere2</option>
-				</select>
-				<select name="cours" id="cours">
-					<option value="cours1">cours1</option>
-					<option value="cours2">cours2</option>
-				</select>
-				<select name="questions" id="questions">
-					<option value="question1">question1</option>
-					<option value="question2">question2</option>
-				</select>
-				<?php
-					echo "<table>";
-					echo "<tr><td>Intitulé de la proposition</td><td>Points</td></tr>";
-					echo "<tr><td>intitulé de la poposition1</td><td>Points associé à la proposition</td></tr>";
-					//bien entendu tout cela etant gérer par la base de données et le tableau etant générer
-					//dynamiquement par l'utilisation de la base de données
-					echo "</table>";
-				?>
-				<!-- création des boutons "ajouter proposition" qui est plus un lien, "supprimer question", "enregistrer qcm",
-				"supprimer QCM" (8) ? -->
-			</li>
-		</ul>
+<div id="enseignant_gestion_cours">
+<h1>Gestion des cours</h1>
+<h2>Ajouter un cours</h2>
+<div id="enseignant_gestion_cours-ajouter">
+	<form>
+			   <p>
+			       <label for="nom">Nom du nouveau cours :</label>
+			       <input type="text" name="nom" id="nom" /><br />
+			   </p>
+			   <p>
+				   <label for="matiere">Selectionner la matiere à laquelle sera rattaché le cours</label><br />
+				   <select name="matiere" id="matiere">
+					   <option value="france">France</option>
+					   
+				   </select>
+			   </p>
+				<p>Sélectionner les formations auquels sera rattaché le cours</p>
+				<p>
+				<ul id="liste_formations">
+					<li></li>
+				</ul>
+				<input id="ajouter" type="image" src="" value="Ajouter" />
+				<input id="enlever" type="image" src="" value="Enlever" />
+				<ul id="liste_formations_cours">
+					<li></li>
+				</ul>
+				</p>
+				<p>
+				<input id="enregistrer" type="button" src="" value="Enregistrer" />
+				</p>
+				
+				
+	</form>
+</div>
+<h2>Supprimer un cours</h2>
+<div id="enseignant_gestion_cours-supprimer">
+	<form>
+	 <p>
+	   <label for="matiere">Filter les cours par la matière</label><br />
+	   <select name="matiere" id="matiere">
+		   <option value="france">France</option>
+		   
+	   </select>
+	   <label for="cours">Sélectionner le cours</label><br />
+	   <select name="cours" id="matiere">
+		   <option value="france">France</option>
+		   
+	   </select>
+	</p>
+	<p>
+				<input id="enregistrer" type="button" src="" value="Enregistrer" />
+	</p>
+		</form>	   
+
+	
+</div>
+</div>
+<div id="enseignant_gestion_qcm">
+<h2>Ajouter un Quiz</h2>
+<div id="enseignant_gestion_qcm-ajouter">
+
+<form>
+			   <p>
+			       <label for="nom">Nom du nouveau quiz :</label>
+			       <input type="text" name="nom" id="nom" /><br />
+			   <label for="matiere">Filtrer les Quizs par matiere</label><br />
+				   <select name="matiere" id="matiere">
+					   <option value="france">France</option>
+					   
+				   </select>
+					 <label for="cours">Filtrer les Quizs par cours</label><br />
+				   <select name="cours" id="matiere">
+					   <option value="france">France</option>
+					   
+				   </select>
+				   
+				   Tableau des questions
+				   <table id="question" >
+						<tr>
+						   <th>Intitulé de la question</th>
+						   <th>Action</th>
+					   </tr>
+					   <tr>
+						   <td>Carmen</td>
+						   <td>33 ans</td>
+					   </tr>
+					   <tr>
+						   <td>Michelle</td>
+						   <td>26 ans</td>
+					   </tr>
+					</table>
+					<input id="ajouter_question" type="button" src="" value="Ajouter question" />
+					<div id="tableau_proposition">
+					<table id="id_question" >
+						<tr>
+						   <th>Intitulé de la question</th>
+						   <th>Action</th>
+					   </tr>
+					   <tr>
+						   <td>Carmen</td>
+						   <td>33 ans</td>
+					   </tr>
+					   <tr>
+						   <td>Michelle</td>
+						   <td>26 ans</td>
+					   </tr>
+					</table>
+					</div>
+					<input id="ajouter_proposition" type="button" src="" value="Ajouter proposition" />
+				<input id="enregistrer" type="button" src="" value="Enregistrer" />
+				</p>
+				
+				
+</form>
+</div>
+<h2>Supprimer un Quiz</h2>
+<div id="enseignant_gestion_qcm-supprimer">
+	<form>
+		<p>
+				   <label for="matiere">Filtrer les Quizs par matiere</label><br />
+				   <select name="matiere" id="matiere">
+					   <option value="france">France</option>
+					   
+				   </select>
+					 <label for="cours">Filtrer les Quizs par cours</label><br />
+				   <select name="cours" id="matiere">
+					   <option value="france">France</option>
+					   
+				   </select>
+				    <label for="cours">Selectionner le Quiz à supprimmer</label><br />
+				   <select name="cours" id="matiere">
+					   <option value="france">France</option>
+					   
+				   </select>
+		</p>
+		<input id="supprimer" type="button" src="" value="Supprimer" />
+	</form>
+</div>
+</div>
+<div id="enseignant_gestion_fichiers">
+<h2>Ajouter un fichier</h2>
+<div id="enseignant_gestion_fichiers-ajouter">
+	<form>
+		<p>
+			
+			<label for="nom">Nom du nouveau fichiers :</label>
+			<input type="text" name="nom" id="nom" /><br />
+			Sélectionner le cours auquel le fichier sera rattaché
+			<label for="matiere">Filtrer les cours par matiere</label><br />
+				   <select name="matiere" id="matiere">
+					   <option value="france">France</option>
+					   
+				   </select>
+					 <label for="cours">Filtrer les fichiers par cours</label><br />
+				   <select name="cours" id="cours">
+					   <option value="france">France</option>
+					   
+					</select>
+			
+			<input id="enregistrer" type="button" src="" value="Enregistrer" />
+		</p>
+	</form>
+</div>
+<h2>Supprimer un fichier</h2>
+<div id="enseignant_gestion_fichiers-supprimer">
+	<form>
+		<p>
+				   <label for="matiere">Filtrer les fichiers par matiere</label><br />
+				   <select name="matiere" id="matiere">
+					   <option value="france">France</option>
+					   
+				   </select>
+					 <label for="cours">Filtrer les fichiers par cours</label><br />
+				   <select name="cours" id="matiere">
+					   <option value="france">France</option>
+					   
+				   </select>
+				    <label for="cours">Selectionner le fichier à supprimmer</label><br />
+				   <select name="cours" id="matiere">
+					   <option value="france">France</option>
+					   
+				   </select>
+		</p>
+		<input id="supprimer" type="button" src="" value="Supprimer" />
+	</form>
 </div>
 <div id="enseignant_resultats">
 	<!-- Consultation des résultats (9) ? -->
