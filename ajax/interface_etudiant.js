@@ -96,5 +96,8 @@ $(function(){
 	//fonction déclenché par par la validation du QCM
 	//  récupère les propositions cochés envoi au serveur les données et recoit la note
 	$('à définir').live('click',function(){
+		
+		//format des données à envoyer
+		// {"id_qcm":6,"question":[{"id":5,"proposition":[{"id":1},{"id":2}]},{"id":5,"proposition":[{"id":1},{"id":2}]} ]}
 	});
 }
