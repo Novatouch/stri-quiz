@@ -2,9 +2,7 @@
 <div id="etudiant_interface">
 	<nav>
 			<ul>
-				<li></li>
-				<li></li>
-				<li id="etudiant_puceqcm"></li>
+				<li id="etudiant_accueil" >Accueil</li>
 			</ul>
 	</nav>
 	<div id="etudiant_accueil">
