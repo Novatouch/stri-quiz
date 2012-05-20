@@ -4,9 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 
-	<title></title>
+	<title>Univ'everywhere</title>
 
-	 <link rel="stylesheet" media="screen" href="css/ecran.css">
+	<link rel="stylesheet" type="text/css" href="style/style.css" />
 </head>
 <body>
 
@@ -36,21 +36,48 @@
 			$page =  "interface_etudiant";
 		break;
 		default:
-			$page = "connexion";
+			$page = "interface_connexion";
 		break;
 	}
-
-	//inclusion du header
+?>
+<div id="main">
+    <div id="header">
+<?php
+	//inclusion du contenu du footer
 	include_once("admin/interface/header.php");
-	//inclusion du menu user_tab
-	include_once("admin/interface/user_tab.php");
-
-
+?>
+      
+      <div id="menubar">
+        <ul id="menu">
+<?php
+	//inclusion du contenu du menu selon l'utilisateur
+	include_once("admin/interface/menu/".$page."_menu.php");
+?>
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+      <div class="sidebar">
+<?php
+		//inclusion de l'élément user_tab
+		include_once("admin/interface/user_tab.php");
+?>
+      </div>
+      <div id="content">
+<?php
 	// récupération du paramètre page et inclusion de la bonne interface
-	include_once("admin/interface/$page.php");
-
-	//inclusion du footer
+	include_once("admin/interface/content/".$page."_content.php");
+?>
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+<?php
+	//inclusion du contenu du footer
 	include_once("admin/interface/footer.php");
 ?>
+    </div>
+  </div>
 </body>
 </html>
