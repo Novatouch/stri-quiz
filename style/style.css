@@ -142,11 +142,15 @@ ol li
 #logo a
 { border: none;}
 
+
 #menubar
-{ width: auto;
+{ width: 100%;
+  width: 1280px;
   height: 46px;
   padding-top: 4px;
-  padding-left: 4px;} 
+  padding-left: 4px;
+  margin-left:230px;
+  overflow:auto;} 
 
 ul#menu
 { float: left;
@@ -159,14 +163,14 @@ ul#menu li
   list-style: none;}
 
 ul#menu li a
-{ letter-spacing: 0.1em;
+{ letter-spacing: 0em;
   font-family: serif;
   font-size: 100%;
   display: block; 
   float: left; 
   height: 20px;
   text-decoration: none; 
-  padding: 9px 22px 5px 16px;
+  padding: 9px 15px 5px 16px;
   text-align: center;
   color: #FFF;
   border: none;} 
@@ -177,18 +181,23 @@ ul#menu li.selected a
 
 ul#menu li.selected
 { margin: 7px 0 0 0;
-  background: #635B53 url(tabs.png) no-repeat 0 0px;}
+  background-color: #00afce;
+  border-radius:  10px 10px 0px 0px;
+
+}
+
 
 ul#menu li.selected a, ul#menu li.selected a:hover
-{ background: #635B53 url(tabs.png) no-repeat 100% 0px;
+{ 
   color: #FFF;}
 
 ul#menu li a:hover
 { color: #00C5EE;}
 
 #site_content
-{ width: 875px;
+{ width: 950px;
   margin-top: 10px;
+  margin-left:15px;
   overflow: hidden;} 
 
 .sidebar
@@ -219,8 +228,8 @@ ul#menu li a:hover
 #content
 { text-align: left;
   width: 624px;
-  float: right;
-  padding: 20px 10px 15px 0px;}
+  float: left;
+  padding: 20px 10px 15px 20px;}
 
 #footer
 { width: 100%;
