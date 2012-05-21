@@ -20,6 +20,7 @@ $(function(){
 	// lors d'un clic sur un élément du menu
 	$('#menubar #menu li').click(function(e){
 
+		// désactive la fonction de base des balises liens
 		e.preventDefault();
 
 		// récupération du lien précedement sélectionné
@@ -29,10 +30,13 @@ $(function(){
 		// retiré la class de la puce  li précdement sélectionné
 		$lien_selectionne.removeClass("selected");
 
+		// rajoute la classe selected au lien clique
 		$(this).addClass("selected");
 
-		//
+		// sélectionne le div qui est affiché
 		$div_a_cache = $('#content div:visible');
+
+		// le div affiché disparait
 		$div_a_cache.hide();
 		// récupérer l'id du div a affiché 
 		var id = $('#menubar #menu li.selected a').attr('href');
@@ -40,8 +44,8 @@ $(function(){
 		var selecteur = "#content #"+[id];
 		$div_selectionne = $(selecteur);
 
+		// affichage du div
 		$div_selectionne.show();
-		// recupération du div 
 		
 	});
 });
