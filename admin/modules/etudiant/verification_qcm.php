@@ -7,7 +7,6 @@
 // Récupération du paramètre $_POST, organisation de l'array
 /*
 	$_POST['id_qcm'] id qcm
-	$_POST['tpe_qcm'] le type du qcm
 	$_POST['question']
 	$_POST['question'][0]['id']
 	$_POST['question'][0]['proposition']
