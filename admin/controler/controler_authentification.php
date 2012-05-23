@@ -1,4 +1,3 @@
-
 <?php
 
 	// demarrage des sessions php
