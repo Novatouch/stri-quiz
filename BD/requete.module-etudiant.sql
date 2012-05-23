@@ -98,6 +98,22 @@ AND	f.idCours = <remplacer php identifiant fichiers> ;
 -- module verification qcm
 
 	-- récupérer le type de quiz
+SELECT typeQuiz FROM Quiz
+WHERE idQuiz = <données php idQuiz>,
 	-- enrgistrement de la participation utilisateur
+	INSERT INTO Participer (idUtilisateurs, idQuiz, date) VALUES(<valeur modifié php>,<valeur modifié php>,now());
 	-- requete pour récupérer l'id de participer
+	SELECT idParticiper FROM Participer 
+	WHERE idUtilisateurs = <php id Util>
+	AND 	idQuiz= <donné php id quiz>
+	AND 	date > (now() - interval '5 second')
 
+	--récupérer bonne réponses
+SELECT p.idProposition FROM Questions q
+INNER JOIN ProposerReponse pr ON q.idQuestion = pr.idQuestion
+INNER JOIN Propositions	   p  ON pr.idProposition = p.idProposition
+WHERE q.idQuestion = <remplacer php identifiant questions> 
+AND pr.exact = true;
+
+	--enregistrement des réponses cochés
+	INSERT INTO Cocher VALUES(<valeur modifié php idParticiper>,<valeur modifié idQuestion>,<idProposition>) php>,now());
