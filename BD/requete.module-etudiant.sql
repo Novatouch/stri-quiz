@@ -1,34 +1,34 @@
 -- module lister matières
 SELECT m.idMatiere, m.nomM FROM Utilisateurs u
-INNER JOIN AppartenirGroupe ag 	ON u.idUtilisateurs = ag.idUtilisateurs
+INNER JOIN AppartenirGroupe ag 	ON u.idUtilisateur = ag.idUtilisateur
 INNER JOIN Groupes g 		ON ag.idGroupe = g.idGroupe
-INNER JOIN Formation fo		ON g.idFormation = fo.idFormation
+INNER JOIN Formations fo		ON g.idFormation = fo.idFormation
 INNER JOIN Acceder ac		ON fo.idFormation = ac.idFormation		
-INNER JOIN Matiere m		ON ac.idMatiere =  m.idMatiere
-WHERE	u.idUtilisateurs = <remplacer php identifiant utilisateur> ;	
+INNER JOIN Matieres m		ON ac.idMatiere =  m.idMatiere
+WHERE	u.idUtilisateur = <remplacer php id utilisateur>;	
 
 -- module lister cours
 SELECT c.idCours, c.nomC FROM Utilisateurs u
-INNER JOIN AppartenirGroupe ag 	ON u.idUtilisateurs = ag.idUtilisateurs
+INNER JOIN AppartenirGroupe ag 	ON u.idUtilisateur = ag.idUtilisateur
 INNER JOIN Groupes g 		ON ag.idGroupe = g.idGroupe
-INNER JOIN Formation fo		ON g.idFormation = fo.idFormation
+INNER JOIN Formations fo		ON g.idFormation = fo.idFormation
 INNER JOIN Acceder ac		ON fo.idFormation = ac.idFormation		
-INNER JOIN Matiere m		ON ac.idMatiere =  m.idMatiere
+INNER JOIN Matieres m		ON ac.idMatiere =  m.idMatiere
 INNER JOIN Cours c		ON m.idMatiere = c.idMatiere
-WHERE	u.idUtilisateurs = <remplacer php identifiant utilisateur> 
-AND	m.idMatiere = <remplacer php identifiant matiere> ;
+WHERE	u.idUtilisateur = <remplacer php identifiant utilisateur> 
+AND	m.idMatiere =  <remplacer php identifiant matiere> ;
 
 -- module lister fichiers
 
 	-- vérifie droits d'accès de l'étudiant au cours
 SELECT c.idCours FROM Utilisateurs u
-INNER JOIN AppartenirGroupe ag 	ON u.idUtilisateurs = ag.idUtilisateurs
+INNER JOIN AppartenirGroupe ag 	ON u.idUtilisateur = ag.idUtilisateur
 INNER JOIN Groupes g 		ON ag.idGroupe = g.idGroupe
-INNER JOIN Formation fo		ON g.idFormation = fo.idFormation
+INNER JOIN Formations fo		ON g.idFormation = fo.idFormation
 INNER JOIN Acceder ac		ON fo.idFormation = ac.idFormation		
-INNER JOIN Matiere m		ON ac.idMatiere =  m.idMatiere
+INNER JOIN Matieres m		ON ac.idMatiere =  m.idMatiere
 INNER JOIN Cours c		ON m.idMatiere = c.idMatiere
-WHERE	u.idUtilisateurs = <remplacer php identifiant utilisateur> 
+WHERE	u.idUtilisateur = <remplacer php identifiant utilisateur> 
 AND	c.idCours = <remplacer php identifiant cours> ;
 
 	-- liste les fichiers pour ce cours

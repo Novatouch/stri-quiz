@@ -289,7 +289,7 @@ INSERT INTO Avoir (idformation,idcours) VALUES ('1','1');
 
 --*************INSERTION DANS LA BASE FICHIERS***************************************
 --SELECT * FROM Fichiers
-INSERT INTO Fichiers (nomF,lien) VALUES ('matrice.pdf','www.matrice.com/matrice.pdf','');
+INSERT INTO Fichiers (nomF,lien,idcours) VALUES ('matrice.pdf','fichiers/matrice.pdf','1');
 
 --**************INSERTION DANS LA TABLE QUIZ**********************************************
 --SELECT * FROM Cours;
@@ -318,7 +318,6 @@ INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('1','1','tr
 --**************INSERTION DANS LA TABLE PARTICIPER**********************************************
 
 --INSERT INTO Participer('Chaouche','Exemple_quizz');
-
 
 
 
