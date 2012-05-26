@@ -10,7 +10,7 @@ INSERT INTO Utilisateurs(6,'Bret','Martial','Breal','gestionprojet','Enseignant'
 INSERT INTO Utilisateurs(7,'Mojahid','Mustapha','Mojpha','basededonnee','Enseignant');
 INSERT INTO Utilisateurs(8,'Chaouche','Arslane','Chalane','enalahc','Etudiant');
 INSERT INTO Utilisateurs(9,'Reno','Pierre','Rere','erer','Etudiant');
-INSERT INTO Utilisateurs(10,'Jack','o'neil','jail','liaj','Etudiant');
+INSERT INTO Utilisateurs(10,'Jack',"o,neil",'jail','liaj','Etudiant');
 INSERT INTO Utilisateurs(11,'Uster','Francis','Usis','sisu','Etudiant');
 INSERT INTO Utilisateurs(12,'Mystere','Il','mysl','lsym','Etudiant');
 INSERT INTO Utilisateurs(13,'No','Name','nome','gnome','Etudiant');
@@ -19,25 +19,12 @@ INSERT INTO Utilisateurs(14,'Neil','Armstrong','neng','gong','Etudiant');
 
 ********INSERTION TABLE GROUPE**************************************************** 
 
-INSERT INTO Groupes(0,'TD','STRI','Chaouche');
-INSERT INTO Groupes(1,'TD','STRI','Reno');
-INSERT INTO Groupes(2,'TD','STRI','Mojahid');
-INSERT INTO Groupes(2,'TD','STRI','Gontrant');
-INSERT INTO Groupes(3,'TD','STRI','Akrour');
-INSERT INTO Groupes(3,'TD','STRI','Bret');
-INSERT INTO Groupes(3,'TD','STRI','Reno');
-INSERT INTO Groupes(3,'TD','STRI','o'neil');
-INSERT INTO Groupes(4,'TD','STRI','Aoun');
-INSERT INTO Groupes(4,'TD','STRI','No');
-INSERT INTO Groupes(5,'TD','STRI','Gautier');
-INSERT INTO Groupes(5,'TD','STRI','Neil');
-INSERT INTO Groupes(6,'TD','STRI','Mystere');
-INSERT INTO Groupes(6,'TD','STRI','Aoun');
+INSERT INTO Groupes(0,'STRI','2014','Chaouche');
 
 
 ******INSERTION DANS LA TABLE FORMATION ******************************************
 
-
+INSERT INTO Formations(1,'STRI','STRI');
 INSERT INTO Formations(1,'STRI','STRI','Maths');
 INSERT INTO Formations(1,'STRI','STRI','Gestion de projet');
 INSERT INTO Formations(1,'STRI','STRI','Histoire de l'informatique');
@@ -64,32 +51,28 @@ INSERT INTO Formations(3,'DIM','DIM','Espagnol');
 *******INSERTION DANS LA TABLE MATIERE ********************************************
 
 
-INSERT INTO Matiere(0,'Maths','STRI','matrice');
-INSERT INTO Matiere(0,'Maths','STRI','nombre complexe');
-INSERT INTO Matiere(1,'Anglais','STRI','generalisation');
-INSERT INTO Matiere(2,'Allemand','STRI','generalisation');
-INSERT INTO Matiere(3,'Management','STRI','diverses stratégie de management');
-INSERT INTO Matiere(4,'Economie','STRI','l'environnement de l'entreprise');
-INSERT INTO Matiere(5,'Espagnol','STRI','si senior');
-INSERT INTO Matiere(6,'Comptabilité','STRI','Gestion de l'entreprise');
-INSERT INTO Matiere(7,'Géographie','STRI','La norvége');
-INSERT INTO Matiere(8,'batiment','STRI','les fondations');
-INSERT INTO Matiere(9,'Informatique','STRI','l'indexation');
-INSERT INTO Matiere(10,'java','STRI','eclipse');
-INSERT INTO Matiere(11,'SHS','STRI','la veille technologique - démarche de Hamming');
-INSERT INTO Matiere(12,'Génie civil','STRI','Les normes de sécurité');
-INSERT INTO Matiere(13,'Gestion de projet','STRI','Le suivi d'un projet');
-INSERT INTO Matiere(14,'Histoire de l'informatique','STRI','Les débuts 70');
-INSERT INTO Matiere(15,'Réseaux d'entreprise','STRI','ATM');
-INSERT INTO Matiere(16,'Flash','STRI','actionscript');
-INSERT INTO Matiere(17,'Informatique Industrielle','STRI','Conversion');
+INSERT INTO Matiere(0,'Maths');
+INSERT INTO Matiere(0,'Maths');
+INSERT INTO Matiere(1,'Anglais');
+INSERT INTO Matiere(2,'Allemand');
+INSERT INTO Matiere(3,'Management');
+INSERT INTO Matiere(4,'Economie');
+INSERT INTO Matiere(5,'Espagnol');
+INSERT INTO Matiere(6,'Comptabilité');
+INSERT INTO Matiere(7,'Géographie');
+INSERT INTO Matiere(8,'batiment');
+INSERT INTO Matiere(9,'Informatique');
+INSERT INTO Matiere(10,'java','STRI');
+INSERT INTO Matiere(11,'SHS','STRI');
+INSERT INTO Matiere(12,'Génie civil');
+INSERT INTO Matiere(13,'Gestion de projet');
 
 
 *************INSERTION DANS LA BASE FICHIERS***************************************
 
-INSERT INTO Fichiers(1,'matrice.pdf','www.matrice.com/matrice.pdf','matrice');
-INSERT INTO Fichiers(2,'Conversion.pdf','www.Conversion.com/Conversion.pdf','Conversion');
-INSERT INTO Fichiers(3,'atm.pdf','www.atm.com/atm.pdf','atm');
+INSERT INTO Fichiers(1,'matrice.pdf','www.matrice.com/matrice.pdf','');
+INSERT INTO Fichiers(2,'Conversion.pdf','www.Conversion.com/Conversion.pdf','');
+INSERT INTO Fichiers(3,'atm.pdf','www.atm.com/atm.pdf','');
 
 
 
