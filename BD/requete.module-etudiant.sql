@@ -70,8 +70,9 @@ AND	c.idCours = <remplacer php identifiant cours> ;
 	-- recupère toutes les question du quiz
 SELECT quest.idQuestion, quest.intituleQ FROM Quiz qui
 INNER JOIN  ContenirQuestion cq ON qui.idQuiz =  cq.idQuiz
-INNER JOIN  Questions quest ON qui.idQuestion =  quest.idQuestion
+INNER JOIN  Questions quest ON cq.idQuestion =  quest.idQuestion
 WHERE qui.idQuiz = <remplacer php identifiant quiz> ;
+ 
 
 	-- recupère toutes les propositions de la question
 SELECT p.idProposition, p.intituleProp FROM Questions q
@@ -84,14 +85,14 @@ WHERE q.idQuestion = <remplacer php identifiant questions> ;
 
 	--retourne le lien du fichier
 SELECT f.lien FROM Utilisateurs u
-INNER JOIN AppartenirGroupe ag 	ON u.idUtilisateurs = ag.idUtilisateurs
+INNER JOIN AppartenirGroupe ag 	ON u.idUtilisateur = ag.idUtilisateur
 INNER JOIN Groupes g 		ON ag.idGroupe = g.idGroupe
-INNER JOIN Formation fo		ON g.idFormation = fo.idFormation
+INNER JOIN Formations fo	ON g.idFormation = fo.idFormation
 INNER JOIN Acceder ac		ON fo.idFormation = ac.idFormation
-INNER JOIN Matiere m		ON ac.idMatiere =  m.idMatiere
+INNER JOIN Matieres m		ON ac.idMatiere =  m.idMatiere
 INNER JOIN Cours c		ON m.idMatiere = c.idMatiere
-INNER JOIN Ficheirs f		ON c.idCours = f.idCours
-WHERE	u.idUtilisateurs = <remplacer php identifiant utilisateur> 
+INNER JOIN Fichiers f		ON c.idCours = f.idCours
+WHERE	u.idUtilisateur = <remplacer php identifiant utilisateur> 
 AND	f.idCours = <remplacer php identifiant fichiers> ;
 	
 
@@ -99,21 +100,24 @@ AND	f.idCours = <remplacer php identifiant fichiers> ;
 
 	-- récupérer le type de quiz
 SELECT typeQuiz FROM Quiz
-WHERE idQuiz = <données php idQuiz>,
+WHERE idQuiz = <données php idQuiz>;
+ 
 	-- enrgistrement de la participation utilisateur
-	INSERT INTO Participer (idUtilisateurs, idQuiz, date) VALUES(<valeur modifié php>,<valeur modifié php>,now());
+	INSERT INTO Participer (idUtilisateur, idQuiz, date) VALUES(<idUtilisateur php>,<idQuiz php>,now());
 	-- requete pour récupérer l'id de participer
+	SELECT * FROM Participer
 	SELECT idParticiper FROM Participer 
-	WHERE idUtilisateurs = <php id Util>
+	WHERE idUtilisateur = <php id Util>
 	AND 	idQuiz= <donné php id quiz>
-	AND 	date > (now() - interval '5 second')
+	AND 	date > (now() - interval '5 second');
+	
 
-	--récupérer bonne réponses
+	--récupérer bonne réponse
 SELECT p.idProposition FROM Questions q
 INNER JOIN ProposerReponse pr ON q.idQuestion = pr.idQuestion
 INNER JOIN Propositions	   p  ON pr.idProposition = p.idProposition
-WHERE q.idQuestion = <remplacer php identifiant questions> 
-AND pr.exact = true;
+WHERE q.idQuestion = <idQuestion>
+AND pr.exact = 'true';
 
 	--enregistrement des réponses cochés
 	INSERT INTO Cocher VALUES(<valeur modifié php idParticiper>,<valeur modifié idQuestion>,<idProposition>) php>,now());

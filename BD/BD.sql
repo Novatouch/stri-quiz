@@ -81,13 +81,13 @@ CREATE TABLE Quiz
 CREATE TABLE Propositions
 (
 	idProposition SERIAL CONSTRAINT cle_proposition PRIMARY KEY,
-	intituleProp	VARCHAR(25)
+	intituleProp	VARCHAR(200)
 );  
 
 CREATE TABLE Questions
 (
 	idQuestion SERIAL CONSTRAINT cle_question PRIMARY KEY,
-	intituleQ	VARCHAR(25)
+	intituleQ	VARCHAR(200)
 );  
 
  
@@ -162,9 +162,10 @@ CREATE TABLE Participer
 	idUtilisateur	int ,
 	idQuiz	int,
 	note	int,
+	date	timestamp,
 	CONSTRAINT fk_idUtilisateur FOREIGN KEY(idUtilisateur) REFERENCES Utilisateurs(idUtilisateur),
 	CONSTRAINT fk_idQuiz FOREIGN KEY(idQuiz) REFERENCES Quiz(idQuiz),
-	date	date,
+	
 	CONSTRAINT pk_pp PRIMARY KEY (idUtilisateur,idQuiz,date)
 );  
 
@@ -300,7 +301,7 @@ INSERT INTO Quiz (nomq,idcours,typequiz) VALUES('guide sécurité',1,'entraineme
 
 --**************INSERTION DANS LA TABLE QUESTIONS*****************************************
 
-INSERT INTO Questions (intituleQ) VALUES ('La question est elle bonne?');
+INSERT INTO Questions (intituleQ) VALUES ('Quelles sont les opérations basiques à réaliser pour sécuriser une machine utlisant Windows');
 
 
 --**************INSERTION DANS LA TABLE CONTENIRQUESTION**********************************************
@@ -309,24 +310,26 @@ INSERT INTO ContenirQuestion VALUES ('1','1');
 
 --*************INSERTION DANS LA BASE PROPOSITIONS***************************************
 --SELECT * FROM Propositions;
-INSERT INTO Propositions (intituleProp) VALUES ('eheh');
+INSERT INTO Propositions (intituleProp) VALUES ('Configurer un mot de passe pour le BIOS');
+INSERT INTO Propositions (intituleProp) VALUES ('Utilier système de fichier performant FAT32');
+INSERT INTO Propositions (intituleProp) VALUES ('Désactiver le boot sir disquette et CDROM');
+INSERT INTO Propositions (intituleProp) VALUES ('Configurer un mot de passe pour le BIOS');
 
 
 --ProposerReponse(#idQuestion,#idProposition,point,exact)
+--SELECT * FROM ProposerReponse;
 INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('1','1','true'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('1','2','false'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('1','3','true'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('1','4','true'); 
 
 --**************INSERTION DANS LA TABLE PARTICIPER**********************************************
 
 --INSERT INTO Participer('Chaouche','Exemple_quizz');
-
-
-
-
-
+--SELECT * FROM questions;
+--SELECT * FROM quiz;
 
 
 --**************INSERTION DANS LA TABLE COCHER**********************************************
 
-
---INSERT INTO Cocher('Exemple_quizz','est ce vrai cela','Chaouche','Exemple_quizz',1);
 
