@@ -189,7 +189,7 @@ ul#menu li.selected a
   padding: 7px 22px 4px 16px;}
 
 ul#menu li.selected
-{ margin: 7px 0 0 0;
+{ 
   background-color: #00afce;
   border-radius:  10px 10px 0px 0px;
 
