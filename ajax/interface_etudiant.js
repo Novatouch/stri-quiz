@@ -1,4 +1,5 @@
 
+//jQuery.noConflict();
 
 	//fonction se déclenchant au chargement de la page
 	// but: permet de lister les matières auquel l'utilisateur à accès
@@ -16,7 +17,7 @@
 		// parcours de l'objet JSON et ajout de balise et id <li id=""></li>			
 		for( var j= 0 ; j < data.length; j++){
 		
-		    $('#etudiant_matieres ul').append('<li><a href='+data[j]["id"]+'>'+ data[j]["nom"]+'</a></li>');	
+		    $('#etudiant_matieres ul').append('<li><a href='+data[j].id+'>'+ data[j].nom+'</a></li>');	
 		}
 	});
 	
@@ -28,16 +29,14 @@
 	// fonction se déclenchant lorsque l'utilisateur clique sur le nom d'une matière
 	// but: mettre à jour la liste des cours propre à cette matière auquels l'utilisateur a accès
 
-	$('#etudiant_matieres ul li a').live('click',function(){
+	$('#etudiant_matieres  li').live('click',function(e){
 
 	// désactive la fonction de base des balises liens
 	e.preventDefault();
 
-	// récupérer id de la matière 
-	var id = this.attr('href');
 	// vérifie si une matière était déjà sélectionnée et enlève les propriétés CSS
 
-	$lien_selectionne = $('#etudiant_matieres a.selected');
+	$lien_selectionne = $('#etudiant_matieres li.selected');
 
 
 	// retiré la class de la puce  li précdement sélectionné
@@ -47,30 +46,91 @@
 	// rajoute la classe selected au lien clique
 	$(this).addClass("selected");
 
+	// vider la liste des cours
+	var selecteur = "#etudiant_cours ul";
+	$liste_cours = $(selecteur);
+	$liste_cours.empty();
+
+	// récupérer id de la matière 
+	$lien_selectionne = $('#etudiant_matieres li.selected a');
+	var id = $lien_selectionne.attr('href');
+
+	var data  = {};
+	data.idmodule=id;
+        
+
+
 	// fait une requète ajax au controler controler_etudiant.php et au module lister_cours
 	// paramètre POST id_matiere
-
-	// récupère objet JSON
-	// vide la liste des cours
-	// remplit la liste des cours
-	// <li id=".." ></li>
+		$.getJSON("admin/controler/controler_etudiant.php?module=lister_cours",
+			data,
+		    function(data){  
+		
+			// parcours de l'objet JSON et ajout de balise et id <li id=""></li>			
+			for( var j=0 ; j < data.length; j++){
+				
+			    $('#etudiant_cours ul').append('<li><a href='+data[j].id+'>'+ data[j].nom+'</a></li>');	
+			}
+		});
 	});
 
 	// fonction se déclenchant lorsque l'utilisateur clique sur le nom d'un cours
 	// but: mettre à jour la liste des fichiers et des QCM accessible à l'utilisateur
 
-	$('à définir').live('click',function(){
+	$('#etudiant_cours  li').live('click',function(e){
 
-	// récupérer id de la matière 
+	e.preventDefault();
+	
 
-	// vérifie si un cours était déjà sélectionné et enlève les propriétés CSS
-	// modifier les paramètres CSS du cours sélectionné pour le mettre en évidence
+	// modif classe
+	$lien_selectionne = $('#etudiant_cours li.selected');
+	
+	$lien_selectionne.removeClass("selected");
+
+	$lien_selectionne.removeClass("selected");
+	$(this).addClass("selected");
+
+	// récupérer id du cours
+	$lien_selectionne = $('#etudiant_cours li.selected a');
+	var id = $lien_selectionne.attr('href');
+
+	// vide la liste des QCM et des fichiers
+	ul_qcm= $('#etudiant_qcm_fichiers #qcm');
+	ul_fichier= $('#etudiant_qcm_fichiers #fichiers');
+	ul_qcm.empty();
+	ul_fichier.empty();
+
+	$lien_selectionne = $('#etudiant_cours li.selected a');
+	var id = $lien_selectionne.attr('href');
+
+	var data  = {};
+	data.idmodule=id;
 
 	// fait une requète ajax au controler controler_etudiant.php et au module lister_QCM
 	// paramètre POST id_cours
+	$.getJSON("admin/controler/controler_etudiant.php?module=lister_QCM",
+			data,
+		    function(data){  
+		
+			// parcours de l'objet JSON et ajout de balise et id <li id=""></li>			
+			for( var j=0 ; j < data.length; j++){
+				
+			    $('#etudiant_qcm_fichiers #qcm').append('<li><a href='+data[j].id+'>'+ data[j].nom+'</a></li>');	
+			}
+		});
 
-	// récupère objet JSON
-	// vide la liste des QCM
+	$.getJSON("admin/controler/controler_etudiant.php?module=lister_fichiers",
+			data,
+		    function(data){  
+		
+			// parcours de l'objet JSON et ajout de balise et id <li id=""></li>			
+			for( var j=0 ; j < data.length; j++){
+				
+			    $('#etudiant_qcm_fichiers #fichiers').append('<li><a href='+data[j].id+'>'+ data[j].nom+'</a></li>');	
+			}
+		});
+
+	
 	// remplit la liste des QCM
 	// <li id=".." >nom QCM</li>
 
