@@ -1,38 +1,38 @@
 <!-- Interface Etudiant  -->
 
 <div id="etudiant_accueil">
-	<div id="etudiant_matieres">
-	<!-- onglet gestion des matiÈres (2) ? -->
+		<h1> Accueil </h1>
+		<div id="etudiant_matieres">
+		<h2> Mati√®res</h2>
+		<!-- onglet gestion des mati√©res (2) ? -->
+			<ul>
+			</ul>
+		</div>
+		<div id="etudiant_cours">
+		<h2> Cours</h2>
+		<!-- onglet cours (3) ? -->
+			<ul></ul>
+		</div>
+		<div id="etudiant_qcm_fichiers">
+		<h2> Contenu</h2>
+		<!-- onglet gestion des qcms par fichiers (3) ? -->
+			<h4> Fichiers </h4>
+			<ul id="fichiers">	
+			</ul>
+			<h4> Quiz </h4>
+			<ul id="qcm">	
+			</ul>
+		</div>
+	</div>
+	<div id="etudiant_qcm">
+		<!-- onglet effectuant les qcm(s) (4) ? -->
+			<ul>
+				<li></li>
+			</ul>
+		</div>
+	<div id="etudiant_resultats">
+	<!-- Consultation des r√©sultats (5) ? -->
 		<ul>
 			<li></li>
 		</ul>
 	</div>
-	<div id="etudiant_cours">
-	<!-- onglet cours (3) ? -->
-		<ul>
-			<li></li>
-		</ul>
-	</div>
-	<div id="etudiant_qcm_fichiers">
-	<!-- onglet gestion des qcms par fichiers (3) ? -->
-		<ul id="fichiers">
-			<li></li>
-		</ul>
-		<ul id="qcm">
-			<li></li>
-		</ul>
-	</div>
-</div>
-<div id="etudiant_qcm">
-	<!-- onglet effectuant les qcm(s) (4) ? -->
-		<ul>
-			<li></li>
-		</ul>
-	</div>
-<div id="etudiant_resultats">
-<!-- Consultation des rÈsultats (5) ? -->
-	<ul>
-		<li></li>
-	</ul>
-</div>
-
