@@ -1,6 +1,18 @@
+/* cacher tous les div au chargement de la page */
 #content div {
 	display:none;
 }
 
+/* Agencement des div du menu etudiant*/
+#content div #etudiant_matieres{
+	float:left;
+}
 
+#content div #etudiant_cours{
+	float:left;
+}
+
+#content div #etudiant_qcm_fichiers{
+	float:left;
+}
 
