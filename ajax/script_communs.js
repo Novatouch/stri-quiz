@@ -15,6 +15,10 @@ $(function(){
 
 		// afichage du div
 		$div_selectionne.show();
+	
+		var selecteur = "#content #"+[id]+" div";
+		$div_selectionne = $(selecteur);
+		$div_selectionne.show();
 	});
 
 	// lors d'un clic sur un élément du menu
@@ -45,6 +49,10 @@ $(function(){
 		$div_selectionne = $(selecteur);
 
 		// affichage du div
+		$div_selectionne.show();
+		
+		var selecteur = "#content #"+[id]+" div";
+		$div_selectionne = $(selecteur);
 		$div_selectionne.show();
 		
 	});
