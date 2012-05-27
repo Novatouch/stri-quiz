@@ -32,19 +32,19 @@
 
 		break;
 		case "lister_fichiers":
-			include_once("modules/etudiant/lister_fichiers.php");
+			include_once("../modules/etudiant/lister_fichiers.php");
 
 		break;
 		case "lister_questions_propositions_qcm":
-			include_once("modules/etudiant/lister_questions_propositions_qcm.php");
+			include_once("../modules/etudiant/lister_questions_propositions_qcm.php");
 
 		break;
 		case "telechargement_fichier":
-			include_once("modules/etudiant/telechargement_fichier.php");
+			include_once("../modules/etudiant/telechargement_fichier.php");
 
 		break;
 		case "verification_qcm":
-			include_once("modules/etudiant/verification_qcm.php");
+			include_once("../modules/etudiant/verification_qcm.php");
 
 		break;
 		default:
