@@ -1,18 +1,25 @@
-$(function(){
+
 
 	//fonction se déclenchant au chargement de la page
 	// but: permet de lister les matières auquel l'utilisateur à accès
-	$('body').ready(function(){
+
+
 
 	// fait une requète ajax au controler controler_etudiant.php et au module lister_matieres
-	// passage du module par un paramètre de type POST nommé module
-
+	// passage du module par un paramètre de type GET nommé module
 	// récupère objet JSON
 
-	// ajoute des nouvelles balises à la balise div etudiant_matieres corespondant aux matières
-	// sous la forme suivante <li id="..."> </li>
-
+	$.getJSON("admin/controler/controler_etudiant.php?module=lister_matieres",  
+		
+	    function(data){  // la fonction qui traitera l'objet reçu	
+		
+		// parcours de l'objet JSON et ajout de balise et id <li id=""></li>			
+		for( var j= 0 ; j < data.length; j++){
+		
+		    $('#etudiant_matieres ul').append('<li><a href='+data[j]["id"]+'>'+ data[j]["nom"]+'</a></li>');	
+		}
 	});
+	
 
 
 
@@ -21,12 +28,24 @@ $(function(){
 	// fonction se déclenchant lorsque l'utilisateur clique sur le nom d'une matière
 	// but: mettre à jour la liste des cours propre à cette matière auquels l'utilisateur a accès
 
-	$('à définir').live('click',function(){
+	$('#etudiant_matieres ul li a').live('click',function(){
+
+	// désactive la fonction de base des balises liens
+	e.preventDefault();
 
 	// récupérer id de la matière 
-
+	var id = this.attr('href');
 	// vérifie si une matière était déjà sélectionnée et enlève les propriétés CSS
+
+	$lien_selectionne = $('#etudiant_matieres a.selected');
+
+
+	// retiré la class de la puce  li précdement sélectionné
+	$lien_selectionne.removeClass("selected");
+
 	// modifier les paramètres CSS de la matière pour la mettre en évidence
+	// rajoute la classe selected au lien clique
+	$(this).addClass("selected");
 
 	// fait une requète ajax au controler controler_etudiant.php et au module lister_cours
 	// paramètre POST id_matiere
@@ -100,4 +119,4 @@ $(function(){
 		//format des données à envoyer
 		// {"id_qcm":6,"question":[{"id":5,"proposition":[{"id":1},{"id":2}]},{"id":5,"proposition":[{"id":1},{"id":2}]} ]}
 	});
-}
+
