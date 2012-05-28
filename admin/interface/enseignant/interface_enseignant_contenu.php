@@ -5,6 +5,14 @@
 		<ul>
 			<li>
 			<!-- requête pour sortir la liste des matiéres accéssible à cet enseignant (2) ? -->
+			SELECT nomM 
+			FROM MATIERES,FORMATIONS,UTILISATEURS,GROUPES,ACCEDER 
+			WHERE UTILISATEURS.nomU=GROUPES.nomU
+			AND	GROUPE.promotion=FORMATIONS.promotion
+			AND	FORMATIONS.nomM=MATIERES.nomM
+			AND 	ACCEDER.nomF=FORMATIONS.nomF
+			AND	ACCEDER.nomM=MATIERE.nomM
+			AND	nomU="enseignant_cours";
 			</li>
 		</ul>
 	</div>
