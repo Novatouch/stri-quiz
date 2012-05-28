@@ -26,13 +26,15 @@
 	</div>
 	<div id="etudiant_qcm">
 		<!-- onglet effectuant les qcm(s) (4) ? -->
-			<ul>
-				<li></li>
-			</ul>
+		<h1>QCM</h1>
+		<p>Répondez aux questions suivantes puis valider en cliquant sur le bouton envoyer.</p>
+			<div id="list_quest">
+			</div>
 		</div>
 	<div id="etudiant_resultats">
 	<!-- Consultation des résultats (5) ? -->
-		<ul>
-			<li></li>
-		</ul>
+		<h1>Résultats</h1>
+		<p>Note obtenu au Quiz:</p>
+		<div id="aff_result"></div>
+
 	</div>
