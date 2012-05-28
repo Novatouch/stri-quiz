@@ -146,25 +146,68 @@
 
 	//fonction déclenché par un clic sur un QCM
 	// elle chargera le QCM
-	$('à définir').live('click',function(){
+	$('#etudiant_qcm_fichiers #qcm li a').live('click',function(e){
+
+	//désactivation des liens
+	e.preventDefault();
 	
+	//  récupération id qcm
+	$lien_selectionne = $(this);
+	var id = $lien_selectionne.attr('href');
+
+	// affichage et vidage du contenu du div ayant l'id "etudiant_qcm"
+	var div_accueil=$('#content #etudiant_accueil');
+	var div_qcm=$('#content #etudiant_qcm #list_quest');
+	 div_qcm.empty();
+	 div_qcm=$('#content #etudiant_qcm');
+
+
+	div_accueil.hide();
+	div_qcm.show();
 	// récupération des questions et des propositions auprès du serveur
 	// id + texte
 	// envoi d'une requête au serveur 
 	// controler : controler_etudiant.php
 	// module :	lister_questions_propositions_qcm
 	// paramètre: id_qcm
+	var data  = {};
+	data.idqcm=id;
 
-	// Récupération objet JSON
 
-	// affichage et vidage du contenu du div ayant l'id "etudiant_qcm"
+	$.getJSON("admin/controler/controler_etudiant.php?module=lister_questions_propositions_qcm",
+			data,
+		    function(data){  
+		
+			// parcours de l'objet JSON et ajout de balise et id <li id=""></li>			
+			for( var j=0 ; j < data.length; j++){
+				
+			var chaine = new Array();
+			
+			for( var j=0 ; j < data.length; j++){
+			chaine += "<form id='"+data[j]['id']+"'>";
+			chaine += "<p> Question  "+(j+1)+": "+ data[j]['intitule']+"<br />";
+			
+		
 
-	// Affichage questions et propostions
-	// id + texte
-	// format: 
+				// parcours des propositions
+				for (var i = 0;i < data[j]['propositions'].length; i++){
+					chaine +='<input type="checkbox"  id="'+data[j]["propositions"][i]["id"]+'"/>';
+					chaine +='<label for='+data[j]["propositions"][i]["id"]+'>'+data[j]["propositions"][i]["intitule"]+'</label> <br />';
 
-	// ajout d'un bouton de validation du QCM
-	// <input type="submit" name="Valider" id="Valider" />
+				}
+				
+				chaine +="</p>";
+				chaine +="</form>";
+			  }
+			// ajout du bouton de validation
+			chaine += '<input id="submit_button" type="button"  value="Envoyer" />';
+			$('#etudiant_qcm #list_quest').append(chaine);
+
+			}
+		});
+		// affichage des questions
+		var div_qcm=$('#content #etudiant_qcm #list_quest');
+		div_qcm.show();
 	});
 
 	//fonction déclenché par un clic sur un Fichier
@@ -174,9 +217,78 @@
 
 	//fonction déclenché par par la validation du QCM
 	//  récupère les propositions cochés envoi au serveur les données et recoit la note
-	$('à définir').live('click',function(){
+	$('#submit_button').live('click',function(){
 		
+		// récupérer id de toutes les questions
+		var selecteur = '#etudiant_qcm form';
+		var idQuestion = new Array();
+		var idProposition = new Array();
+		var donnees_json= new Array();
+ 		$(selecteur).each(function(index,value) {
+   			idQuestion[index]=$(this).attr('id');
+			
+		});
+		// récupération id quiz
+		var idQuiz=3;
+		donnees_json+='{"id_qcm": "'+idQuiz+'","question":[';
+		// pour chaque question
+		
+		for(var i=0; i<idQuestion.length; i++){
+			
+			if(i == 0){
+				donnees_json += '{"id":"'+idQuestion[i]+'","proposition":[';
+			}
+			else{
+				donnees_json += '},{"id":"'+idQuestion[i]+'","proposition":[';
+			}
+			
+			selecteur='form[id="'+idQuestion[i]+'"] input:checked';
+			
+			
+
+			// si il ya des réponses cochés
+	
+			if($(selecteur).length > 0){
+		
+				// parcour de chaque proposition cochée
+				$(selecteur).each(function(index,value) {
+	   				
+					if(index==0){
+						donnees_json+='{"id":"'+$(this).attr('id')+'"';
+					}
+					else{
+						donnees_json+='},{"id":"'+$(this).attr('id')+'"';
+					}
+				});
+				donnees_json +='} ';
+			}
+			donnees_json +=' ]';
+		}
+		donnees_json +='} ]}';
+		
+
 		//format des données à envoyer
-		// {"id_qcm":6,"question":[{"id":5,"proposition":[{"id":1},{"id":2}]},{"id":5,"proposition":[{"id":1},{"id":2}]} ]}
+		//donnees_json = '{"id_qcm":"6","question":[{"id":"5","proposition":[{"id":"1"},{"id":"2"}]},{"id":"5","proposition":[{"id":"1"},{"id":"2"}]} ]}';
+		
+		var data = JSON.parse(donnees_json);
+
+$.getJSON("admin/controler/controler_etudiant.php?module=verification_qcm",
+			data,
+		    function(data2){  
+			//caché le div qcm
+			var div_qcm=$('#content #etudiant_qcm');
+			div_qcm.hide();
+
+			// affiché le div résultat
+			var div_resultat=$('#content #etudiant_resultats');
+			div_resultat.show();
+			
+			var div_affichage_resultat=$('#etudiant_resultats #aff_result');
+			div_affichage_resultat.empty();
+			div_affichage_resultat.append("<h4>"+data2.note+" /20 </h4>");
+			div_affichage_resultat.show();
 	});
+
+		
+});
 
