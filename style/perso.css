@@ -5,14 +5,22 @@
 
 /* Agencement des div du menu etudiant*/
 #content div #etudiant_matieres{
-	float:left;
+	display: inline-block; 
+	vertical-align: top;
+	width:200px;
 }
 
 #content div #etudiant_cours{
-	float:left;
+	display: inline-block; 
+	vertical-align: top;
+	width:200px;
 }
 
 #content div #etudiant_qcm_fichiers{
-	float:left;
+	display: inline-block; 
+	vertical-align: top;
+	width:200px;
 }
+
+
 

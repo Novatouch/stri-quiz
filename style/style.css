@@ -92,10 +92,12 @@ ol li
 { background: url(back.png) repeat-x;}
 
 #flashContent{
-	float:right;
+	display: inline-block; 
+	vertical-align: top;
 	width="456px" ;
 	height="110px";
 	overflow:hidden;
+	margin-left:20px;
 }
 
 #logo
@@ -104,7 +106,8 @@ ol li
   position: relative;
   /*background: transparent url(logo.png) no-repeat right;*/}
 #logo_text {
-	float:left;
+	display: inline-block; 
+	vertical-align: top;
 }
 #logo 
 { /*position: absolute; 
@@ -156,7 +159,7 @@ ol li
 { width: 100%;
   width: 1280px;
   height: 46px;
-  padding-top: 4px;
+  padding-top: 6px;
   padding-left: 4px;
   margin-left:230px;
   overflow:auto;} 
@@ -204,15 +207,22 @@ ul#menu li a:hover
 { color: #00C5EE;}
 
 #site_content
-{ width: 950px;
+{ width: auto;
+	height:auto;
   margin-top: 10px;
+  margin-bottom: 30px;
   margin-left:15px;
-  overflow: hidden;} 
+  margin-right:15px;
+	
+  } 
 
 .sidebar
-{ float: left;
+{ display: inline-block;
+  
   width: 178px;
-  padding: 20px 25px 15px 15px;}
+  padding: 20px 25px 15px 15px;
+	vertical-align: top;
+}
 
 .sidebar ul
 { width: 178px; 
@@ -235,13 +245,21 @@ ul#menu li a:hover
 { color: #A4AA04;} 
 
 #content
-{ text-align: left;
-  width: 624px;
-  float: left;
-  padding: 20px 10px 15px 20px;}
+{
+	display: inline-block; 
+	vertical-align: top;
+width:860px;
+
+	
+	text-align: left;
+  padding: 20px 10px 15px 20px;
+}
 
 #footer
-{ width: 100%;
+{
+	
+	bottom:0px;
+	width: 100%;
   font-family: sans-serif;
   font-size: 90%;
   height: 80px;
