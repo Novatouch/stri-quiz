@@ -1,5 +1,5 @@
 <?php
-
+function  lister_matieres(){
 // Ce module récupère la liste des matières auquels l'étudiant a accès
 
 // récupération variable de type POST $_POST["id_matière"] 
@@ -48,4 +48,5 @@ pg_close($db_handle);
  $matieres[1]['nom'] = "Sécurité";*/
 
 echo json_encode($matieres);
+}
 ?>
