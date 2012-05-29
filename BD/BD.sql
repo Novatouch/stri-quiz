@@ -302,19 +302,39 @@ INSERT INTO Quiz (nomq,idcours,typequiz) VALUES('guide sécurité',1,'entraineme
 --**************INSERTION DANS LA TABLE QUESTIONS*****************************************
 
 INSERT INTO Questions (intituleQ) VALUES ('Quelles sont les opérations basiques à réaliser pour sécuriser une machine utlisant Windows');
+INSERT INTO Questions (intituleQ) VALUES ('Qu''est ce qu''un scanneur de ports?');
+INSERT INTO Questions (intituleQ) VALUES ('Lequel de ces logiciels est un scanneur de ports ?');
+
+INSERT INTO Questions (intituleQ) VALUES ('Lesquels de ces scans ne nécessite pas les droits d''administrateur?');
 
 
 --**************INSERTION DANS LA TABLE CONTENIRQUESTION**********************************************
 --SELECT * FROM ContenirQuestion;
 INSERT INTO ContenirQuestion VALUES ('1','1');
+INSERT INTO ContenirQuestion VALUES ('2','1');
+INSERT INTO ContenirQuestion VALUES ('3','1');
+INSERT INTO ContenirQuestion VALUES ('4','1');
 
 --*************INSERTION DANS LA BASE PROPOSITIONS***************************************
 --SELECT * FROM Propositions;
-INSERT INTO Propositions (intituleProp) VALUES ('Configurer un mot de passe pour le BIOS');
-INSERT INTO Propositions (intituleProp) VALUES ('Utilier système de fichier performant FAT32');
-INSERT INTO Propositions (intituleProp) VALUES ('Désactiver le boot sir disquette et CDROM');
-INSERT INTO Propositions (intituleProp) VALUES ('Configurer un mot de passe pour le BIOS');
+INSERT INTO Propositions (intituleProp) VALUES ('Configurer un mot de passe pour le BIOS.');
+INSERT INTO Propositions (intituleProp) VALUES ('Utilier système de fichier performant FAT32.');
+INSERT INTO Propositions (intituleProp) VALUES ('Désactiver le boot sir disquette et CDROM.');
+INSERT INTO Propositions (intituleProp) VALUES ('Configurer un mot de passe pour le BIOS.');
+INSERT INTO Propositions (intituleProp) VALUES ('Un logiciel pouvant permettre de connaitre les services offerts par un serveur.');
+INSERT INTO Propositions (intituleProp) VALUES ('Un logiciel permettant de protéger ses ports.');
+INSERT INTO Propositions (intituleProp) VALUES ('Un outils intégré dans une imprimante multifonction.');
+INSERT INTO Propositions (intituleProp) VALUES ('Un outils de découverte de fichiers.');
 
+INSERT INTO Propositions (intituleProp) VALUES ('telnet');
+INSERT INTO Propositions (intituleProp) VALUES ('filezilla');
+INSERT INTO Propositions (intituleProp) VALUES ('nmap');
+INSERT INTO Propositions (intituleProp) VALUES ('chromium');
+
+INSERT INTO Propositions (intituleProp) VALUES ('XMAS scan');
+INSERT INTO Propositions (intituleProp) VALUES ('scan fin');
+INSERT INTO Propositions (intituleProp) VALUES ('scan syn');
+INSERT INTO Propositions (intituleProp) VALUES ('vanilla TCP connect');
 
 --ProposerReponse(#idQuestion,#idProposition,point,exact)
 --SELECT * FROM ProposerReponse;
@@ -322,6 +342,23 @@ INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('1','1','tr
 INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('1','2','false'); 
 INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('1','3','true'); 
 INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('1','4','true'); 
+
+
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('2','5','true'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('2','6','false'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('2','7','false'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('2','8','false');
+ 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','9','false'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','10','false'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','11','true'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','12','false'); 
+
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','13','false'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','14','false'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','15','false'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','16','true'); 
+
 
 --**************INSERTION DANS LA TABLE PARTICIPER**********************************************
 
