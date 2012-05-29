@@ -9,7 +9,7 @@ include_once($document_root."/admin/fonctions/connection_bd.php");
 if(isset($_POST['identifiant']) && isset($_POST['mdp']))
 {
 	$util = $_POST['identifiant'];
-	$mdp = $_POST['mdp'];
+	$mdp  = $_POST['mdp'];
 
 	// requête à la base pour récupérer les information de l'utilisateur
 	$req = "SELECT u.idUtilisateur,u.nomU,u.prenomU,u.pseudo,u.passwordU,u.typeCompte FROM Utilisateurs u WHERE u.pseudo='$util'";
@@ -18,7 +18,7 @@ if(isset($_POST['identifiant']) && isset($_POST['mdp']))
 	// Si la requête à échoué redirection
 	if(!$result)
 	{
-		exit();
+		exit(1);
 	}
 
 	// regarde le nombre de résultat
