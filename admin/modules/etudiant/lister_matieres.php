@@ -28,8 +28,8 @@ for ($row = 0; $row < $nbcolonne; $row++) {
 $values = pg_fetch_object($result, $row, PGSQL_ASSOC);
 $idm = $values->idMatiere . " ";
 $nomm .= $values->nomM . " ";
-$matieres[$row]['id'] = $idm;
- $matieres[$row]['nom'] = $nomm ;
+$matieres[$row][$idm] = $idm;
+ $matieres[$row][$nomm ] = $nomm ;
 
  }
 else {
