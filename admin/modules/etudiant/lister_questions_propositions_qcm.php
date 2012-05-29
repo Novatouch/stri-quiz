@@ -16,7 +16,34 @@ $idqcm=$_POST['idqcm'];
 
 // récupère toutes les questions et les propositions du QCM
 
+$db_handle = pg_connect("BD_PROJET=$BD_PROJET");
+if ($db_handle) {
+echo 'connexion réussi.';
+} else {
+echo 'connexion échoué.';
+}
+$req = "SELECT idQuiz,nomQ, FROM MATIERES,ACCEDER,UTILISATEURS,FORMATIONS,GROUPE WHERE MATIERES.idMatiere=ACCEDER.idMatiere 
+AND ACCEDER.idFormation=FORMATIONS.idFormation AND GROUPES.idFormation=FORMATIONS.idFormation AND GROUPES.idGroupe=AppartenirGroupe.idGroupe AND UTILISATEURS.idUtilisateurs=UTILISATEURS.idUtilisateurs AND idMatiere=$id_M ";
+$result = pg_exec($db_handle, $req);
 
+$nbcolonne=pg_numrows($result);
+if ($result) {
+echo "La requête s'est bien executer.<br>\n";
+for ($row = 0; $row < $nbcolonne; $row++) {
+$values = pg_fetch_object($result, $row, PGSQL_ASSOC);
+$idm = $values->idMatiere . " ";
+$nomm .= $values->nomM . " ";
+$matieres[$row]['id'] = $idm;
+ $matieres[$row]['nom'] = $nomm ;
+
+ }
+else {
+echo "La requête à rencontrer une erreur:<br>\n";
+echo pg_errormessage($db_handle);
+}
+
+pg_freeresult($result);
+pg_close($db_handle);
 
 // fabrication de l'objet JSON
 
