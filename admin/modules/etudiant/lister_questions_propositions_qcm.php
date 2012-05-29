@@ -4,11 +4,19 @@
 
 // vérification que l'utilisateur est authentifié
 
+
+
 // Récupération du paramètre $_GET['idqcm']
+
+$idqcm=$_POST['idqcm'];
 
 // vérifie que l'utilisateur à bien le droit d'accéder au QCM
 
+
+
 // récupère toutes les questions et les propositions du QCM
+
+
 
 // fabrication de l'objet JSON
 
