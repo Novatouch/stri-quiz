@@ -1,5 +1,7 @@
 
 <?php
+	// variable contenant le chemin du serveur
+	include_once($document_root."/admin/fonctions/connection_bd.php");
 
 	// verification des droits d'accès de l'utilisateur à ce controleur (variables sessions)
 

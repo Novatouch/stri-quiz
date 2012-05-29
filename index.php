@@ -14,6 +14,8 @@
 <!-- Document -->
 <?php
 
+	// récupération de la racine du site
+	include_once("config/document_root.php");
 	//recuperation variable passé par l'adresse 
 	//penser à introduire une condition concernant les variables de sessions
 	if (isset($_GET['page']))
