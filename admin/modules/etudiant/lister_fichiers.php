@@ -1,5 +1,5 @@
 <?php
-
+function  lister_fichiers(){
 // Ce modules récupère la liste des fichiers corespondant à un cours
 
 
@@ -43,4 +43,5 @@ pg_close($db_handle);
  $fichiers[0]['nom'] = "NomFichiers";*/
 
 echo json_encode($fichiers);
+}
 ?>
