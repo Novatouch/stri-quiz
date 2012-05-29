@@ -6,6 +6,9 @@
 
 // Récupération du paramètre $_GET, organisation de l'array
 
+require(" telechargement_fichier.php");
+/*récuperation de la liste des questions et propositions du quiz*/
+$qcm
 $reqQ="SELECT idQuiz FROM QUIZ";
 
 $idQ=$_POST['id_quiz'];
