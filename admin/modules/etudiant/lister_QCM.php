@@ -18,7 +18,7 @@ echo 'connexion réussi.';
 } else {
 echo 'connexion échoué.';
 }
-$req = "SELECT id_Quiz, nomQ, typeQuizz FROM QUIZ";
+$req = "SELECT id_Quiz, nomQ, typeQuizz FROM QUIZ,COURS WHERE COURS.idCours=QUIZ.idCours AND idCours= $id_courstrait";
 $result = pg_exec($db_handle, $req);
 
 $nbcolonne=pg_numrows($result);
