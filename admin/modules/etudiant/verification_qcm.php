@@ -103,7 +103,7 @@ else if($values->typeQuizz=="EXAMEN"){$query_examen="INSERT INTO PARTICIPER(,$ut
 
 // fabrication de l'objet JSON pour renvoyer la note
 //renvoi de la note
-
+echo "La note du quiz est $note";
 /*$resultat['note']= "20"; */
 
 echo json_encode($note);
