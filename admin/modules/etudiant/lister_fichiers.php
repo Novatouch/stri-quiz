@@ -6,7 +6,7 @@
 
 // récupération de l'id du cours passée par un paramètre de type POST nom variable $_GET['id_cours']
 
-$id_c=$_POST['id_cours'];
+$id_c=$_POST['id_Cours'];
 
 // requête à la base de donnée pour récupérer l'id des fichiers et les noms des fichiers
 
@@ -16,7 +16,7 @@ echo 'connexion réussi.';
 } else {
 echo 'connexion échoué.';
 }
-$req = "SELECT idFichier,nomF FROM FICHIERS,COURS WHERE COURS.idCours=FICHIERS.idCours";
+$req = "SELECT idFichier,nomF FROM FICHIERS,COURS WHERE COURS.idCours=FICHIERS.idCours AND id_Cours=$id_c";
 $result = pg_exec($db_handle, $req);
 
 $nbcolonne=pg_numrows($result);
