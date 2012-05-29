@@ -162,7 +162,7 @@ CREATE TABLE Participer
 	idUtilisateur	int ,
 	idQuiz	int,
 	note	int,
-	date	timestamp,
+	date	TIMESTAMP,
 	CONSTRAINT fk_idUtilisateur FOREIGN KEY(idUtilisateur) REFERENCES Utilisateurs(idUtilisateur),
 	CONSTRAINT fk_idQuiz FOREIGN KEY(idQuiz) REFERENCES Quiz(idQuiz),
 	

@@ -5,19 +5,30 @@
 // vérification que l'utilisateur est authentifié
 
 // Récupération du paramètre $_GET, organisation de l'array
-/*
-	$_GET['id_qcm'] id qcm
-	$_GET['question']
-	$_GET['question'][0]['id']
-	$_GET['question'][0]['proposition']
-	$_GET['question'][0]['proposition'][0]['id']
-	$_GET['question'][0]['proposition'][1]['id']
 
-	$_GET['question'][1]['id']   id question
-	$_GET['question'][1]['proposition']
-	$_GET['question'][1]['proposition'][0]['id'] id proposition
-	$_GET['question'][1]['proposition'][1]['id']
-*/
+require(" telechargement_fichier.php");
+/*récuperation de la liste des questions et propositions du quiz*/
+$qcm
+$reqQ="SELECT idQuiz FROM QUIZ";
+
+$idQ=$_POST['id_quiz'];
+int j=pg_numrows($result);
+int j=0;
+int s=0;
+for(int i=0;i<j;i++)
+{
+	$_GET['id_qcm'];
+	$_GET['question'];
+	$_GET['question'][0]['id'];
+	$_GET['question'][0]['proposition'];
+	$_GET['question'][0]['proposition'][0]['id'];
+	$_GET['question'][0]['proposition'][1]['id'];
+
+	$_GET['question'][1]['id'] ;  /*id question*/
+	$_GET['question'][1]['proposition'];
+	$_GET['question'][1]['proposition'][0]['id'] ;/*id proposition*/
+	$_GET['question'][1]['proposition'][1]['id'];
+}
 
 
 // vérifie que l'utilisateur à bien le droit d'accéder au QCM et recupère typeQCM
@@ -35,7 +46,7 @@
 	//vérifier si l'utilisateur a coché aucune réponse isset($_GET['question'][x]['proposition']))
  	//récupération des id des bonne réponses
 
-		// Si le typede qcm est examen enregistrement des propositions validés par l'utilsateur
+		// Si le type de qcm est examen enregistrement des propositions validés par l'utilsateur
 	
 	// mise à jour du compteur de points
 

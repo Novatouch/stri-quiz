@@ -18,7 +18,7 @@ echo 'connexion réussi.';
 } else {
 echo 'connexion échoué.';
 }
-$req = "SELECT id_Quiz, nomQ, typeQuizz FROM QUIZ";
+$req = "SELECT id_Quiz, nomQ, typeQuizz FROM QUIZ,COURS WHERE COURS.idCours=QUIZ.idCours AND idCours= $id_courstrait";
 $result = pg_exec($db_handle, $req);
 
 $nbcolonne=pg_numrows($result);
@@ -29,9 +29,9 @@ $values = pg_fetch_object($result, $row, PGSQL_ASSOC);
 $idQ = $values->idQuiz . " ";
 $nom .= $values->nomQ . " ";
 $typeQ .= $values->typeQuizz;
-$qcm[$row]['id'] = $idQ;
- $qcm[$row]['nom'] = $nom;
- $qcm[$row]['type'] = $typeQ ;
+$qcm[$row][$idQ] = $idQ;
+ $qcm[$row][$nom] = $nom;
+ $qcm[$row][$typeQ] = $typeQ ;
 }
 else {
 echo "La requête à rencontrer une erreur:<br>\n";
