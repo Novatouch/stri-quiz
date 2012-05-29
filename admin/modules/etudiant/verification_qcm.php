@@ -11,13 +11,25 @@ require(" telechargement_fichier.php");
 $qcm
 $reqQ="SELECT idQuiz FROM QUIZ";
 
-$idQ=$_POST['id_quiz'];
+$idQ_etudiant=$_POST['id_quiz'];
+
 int j=pg_numrows($result);
-int j=0;
-int s=0;
 for(int i=0;i<j;i++)
 {
-	$_GET['id_qcm'];
+/*Ici on récupere les réponses de l'étudiant*/
+$qcm_etudiant[i][$idQ_etudiant]= $_GET['id_qcm']; 
+$qcm_etudiant[i][$int_Question]= $_GET['question'];
+$qcm_etudiant[i][intitule_Prop][i][$idQ_etudiant]=$_GET['question'][i]['id'];
+$qcm_etudiant[i][intitule_Prop][i][$int_Question]= $_GET['question'][i]['proposition'];
+$qcm_etudiant[i][intitule_Prop][i+1][$int_Question]=$_GET['question'][i]['proposition'][i]['id'];
+$qcm_etudiant[i][intitule_Prop][i+2][$int_Question]= $_GET['question'][i]['proposition'][i]['id'];
+$qcm_etudiant[i][intitule_Prop][i+2][$int_Question]= $_GET['question'][i]['id'] ; ;
+$qcm_etudiant[i][intitule_Prop][i+2][$int_Question]= $_GET['question'][i]['proposition']; 
+$qcm_etudiant[i][intitule_Prop][i+3][$int_Question]=$_GET['question'][i]['proposition'][i]['id'] ;
+$qcm_etudiant[i][intitule_Prop][i+3][$int_Question]= $_GET['question'][i]['proposition'][i]['id'];
+
+}
+	/*$_GET['id_qcm'];
 	$_GET['question'];
 	$_GET['question'][0]['id'];
 	$_GET['question'][0]['proposition'];
@@ -27,20 +39,24 @@ for(int i=0;i<j;i++)
 	$_GET['question'][1]['id'] ;  /*id question*/
 	$_GET['question'][1]['proposition'];
 	$_GET['question'][1]['proposition'][0]['id'] ;/*id proposition*/
-	$_GET['question'][1]['proposition'][1]['id'];
-}
+	$_GET['question'][1]['proposition'][1]['id'];*/
+
 
 
 // vérifie que l'utilisateur à bien le droit d'accéder au QCM et recupère typeQCM
 
+$req = "SELECT typeQuizz FROM QUIZZ WHERE idQuiz= $idQ_etudiant";
+
 	// Si le type de compte est un qcm d'évaluation
 	// enregistrement de la participation
 
-
+if(
 // parcours des questions dans l'array $_GET
 
 	// pour chaque question 
 	//incrémentation du compteur de question
+
+
 
 
 	//vérifier si l'utilisateur a coché aucune réponse isset($_GET['question'][x]['proposition']))
