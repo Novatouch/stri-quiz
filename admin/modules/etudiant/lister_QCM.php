@@ -29,9 +29,9 @@ $values = pg_fetch_object($result, $row, PGSQL_ASSOC);
 $idQ = $values->idQuiz . " ";
 $nom .= $values->nomQ . " ";
 $typeQ .= $values->typeQuizz;
-$qcm[$row]['id'] = $idQ;
- $qcm[$row]['nom'] = $nom;
- $qcm[$row]['type'] = $typeQ ;
+$qcm[$row][$idQ] = $idQ;
+ $qcm[$row][$nom] = $nom;
+ $qcm[$row][$typeQ] = $typeQ ;
 }
 else {
 echo "La requête à rencontrer une erreur:<br>\n";
