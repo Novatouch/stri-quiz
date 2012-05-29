@@ -26,8 +26,8 @@ for ($row = 0; $row < $nbcolonne; $row++) {
 $values = pg_fetch_object($result, $row, PGSQL_ASSOC);
 $idCours = $values->idCours . " ";
 $nomCours .= $values->nomCours . " ";
-$cours[$row]['id'] = idCours;
- $cours[$row]['nom'] = nomCours;
+$cours[$row][$idCours] = $idCours;
+ $cours[$row][$nomCours] = $nomCours;
  }
 else {
 echo "La requête à rencontrer une erreur:<br>\n";
