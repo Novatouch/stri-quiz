@@ -57,6 +57,7 @@ pg_close($db_handle);
 
 // fabrication de l'objet JSON
 
-
+echo json_encode($qcm);
+echo json_encode($lienF);/*Cela va te permettre d'ouvrir le fichier dans le navigation*/
 
 ?>
