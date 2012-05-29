@@ -1,3 +1,5 @@
+<?php
+
 // source http://crackstation.net/hashing-security.html#phpsourcecode
 //Takes a password and returns the salted hash
 //$password - the password to hash
@@ -27,3 +29,5 @@ function ValidatePassword($password, $correctHash)
 	//if the hashes are exactly the same, the password is valid
 	return $testHash === $validHash;
 }
+
+?>
