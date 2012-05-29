@@ -1,5 +1,5 @@
 <?php
-
+function  lister_cours(){
 // Ce modules récupère la liste des cours corespondant à une matière et dont l'utilisateur à accès
 
 // récupération des variables de sessions contenant l'id de l'utilisateur
@@ -56,4 +56,5 @@ else
  $cours[3]['nom'] = "iptables avancée";*/
 
  echo json_encode($cours);
+}
 ?>

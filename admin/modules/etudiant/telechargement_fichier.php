@@ -1,5 +1,5 @@
 <?php
-
+function telechargement_fichier(){
 // Ce module récupère la liste des questions et des propositions
 
 // vérification que l'utilisateur est authentifié
@@ -59,5 +59,5 @@ pg_close($db_handle);
 
 echo json_encode($qcm);
 echo json_encode($lienF);/*Cela va te permettre d'ouvrir le fichier dans le navigation*/
-
+}
 ?>
