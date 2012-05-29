@@ -1,5 +1,5 @@
 <?php
-
+function verification_qcm(){
 // Ce module récupère la liste des questions et des propositions
 
 // vérification que l'utilisateur est authentifié
@@ -107,5 +107,5 @@ echo "La note du quiz est $note";
 /*$resultat['note']= "20"; */
 
 echo json_encode($note);
-
+}
 ?>
