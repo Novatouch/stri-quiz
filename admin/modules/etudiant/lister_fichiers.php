@@ -26,8 +26,8 @@ for ($row = 0; $row < $nbcolonne; $row++) {
 $values = pg_fetch_object($result, $row, PGSQL_ASSOC);
 $idFichiers = $values->idFichier . " ";
 $nomFichiers .= $values->nomF . " ";
-$fichiers[$row]['id'] = $idFichiers;
- $fichiers[$row]['nom'] = $nomFichiers;
+$fichiers[$row][$idFichiers] = $idFichiers;
+ $fichiers[$row][$nomFichiers] = $nomFichiers;
  }
 else {
 echo "La requête à rencontrer une erreur:<br>\n";
