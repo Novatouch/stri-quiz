@@ -56,7 +56,7 @@
 	var id = $lien_selectionne.attr('href');
 
 	var data  = {};
-	data.idmodule=id;
+	data.idMatiere=id;
         
 
 
@@ -104,7 +104,7 @@
 	var id = $lien_selectionne.attr('href');
 
 	var data  = {};
-	data.idmodule=id;
+	data.idCours=id;
 
 	// fait une requète ajax au controler controler_etudiant.php et au module lister_QCM
 	// paramètre POST id_cours
@@ -119,6 +119,8 @@
 			}
 		});
 
+	data.idCours=id;
+
 	$.getJSON("admin/controler/controler_etudiant.php?module=lister_fichiers",
 			data,
 		    function(data){  
@@ -126,7 +128,7 @@
 			// parcours de l'objet JSON et ajout de balise et id <li id=""></li>			
 			for( var j=0 ; j < data.length; j++){
 				
-			    $('#etudiant_qcm_fichiers #fichiers').append('<li><a href='+data[j].id+'>'+ data[j].nom+'</a></li>');	
+			    $('#etudiant_qcm_fichiers #fichiers').append("<li><a href='admin/controler/controler_etudiant.php?module=telechargement_fichier&idfichier="+data[j].id+"'>"+data[j].nom+"</a></li>");	
 			}
 		});
 
@@ -158,9 +160,13 @@
 	// affichage et vidage du contenu du div ayant l'id "etudiant_qcm"
 	var div_accueil=$('#content #etudiant_accueil');
 	var div_qcm=$('#content #etudiant_qcm #list_quest');
-	 div_qcm.empty();
-	 div_qcm=$('#content #etudiant_qcm');
+	div_qcm.empty();
+	div_qcm=$('#content #etudiant_qcm');
 
+
+	// récupération idCours
+	$lien_selectionne = $('#etudiant_cours li.selected a');
+	var idCours = $lien_selectionne.attr('href');
 
 	div_accueil.hide();
 	div_qcm.show();
@@ -169,10 +175,10 @@
 	// envoi d'une requête au serveur 
 	// controler : controler_etudiant.php
 	// module :	lister_questions_propositions_qcm
-	// paramètre: id_qcm
+	// paramètre: idqcm,idCours
 	var data  = {};
 	data.idqcm=id;
-
+	data.idCours= idCours;
 
 	$.getJSON("admin/controler/controler_etudiant.php?module=lister_questions_propositions_qcm",
 			data,
@@ -202,6 +208,9 @@
 			// ajout du bouton de validation
 			chaine += '<input id="submit_button" type="button"  value="Envoyer" />';
 			$('#etudiant_qcm #list_quest').append(chaine);
+			
+			// ajout span contenant id du quiz
+			$('#etudiant_qcm #list_quest').append('<span id='+id+'></span>');
 
 			}
 		});
@@ -229,7 +238,9 @@
 			
 		});
 		// récupération id quiz
-		var idQuiz=3;
+		var span_id = $('#etudiant_qcm #list_quest span');
+		
+		var idQuiz=span_id.attr('id');
 		donnees_json+='{"id_qcm": "'+idQuiz+'","question":[';
 		// pour chaque question
 		
