@@ -186,20 +186,20 @@ CREATE TABLE Cocher
 --Select * FROM Utilisateurs;
 --DELETE  FROM Utilisateurs;
 --ALTER SEQUENCE utilisateurs_idutilisateur_seq RESTART WITH 1;
-INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Gontrand','bernard','crin','killer','Etudiant');
-INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Jack','o''neil','jail','liaj','Etudiant');
-INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Akrour','Sofian','rodul','ouicca','Administrateur');
-INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Gautier','Philipe','Novatouch','Lololo','Administrateur');
-INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Debas','Benoit','Denoi','helloworld','Enseignant');
-INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Aoun','Andre','Aore','directeur','Enseignant');
-INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Bret','Martial','Breal','gestionprojet','Enseignant');
-INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Mojahid','Mustapha','Mojpha','basededonnee','Enseignant');
-INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Chaouche','Arslane','Chalane','enalahc','Etudiant');
-INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Reno','Pierre','Rere','erer','Etudiant');
-INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Uster','Francis','Usis','sisu','Etudiant');
-INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Mystere','Il','mysl','lsym','Etudiant');
-INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('No','Name','nome','gnome','Etudiant');
-INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Neil','Armstrong','neng','gong','Etudiant');
+INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Gontrand','bernard','crin','34560aa09d3eae4ce997fa390d72a05c093339e651ae16a604800c78f65b8956e255c624c518f18ebf6a55dbd8b4f27b7dfeb37eec0c953258634d9b50d62e08','Etudiant');
+INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Jack','o''neil','jail','34560aa09d3eae4ce997fa390d72a05c093339e651ae16a604800c78f65b8956e255c624c518f18ebf6a55dbd8b4f27b7dfeb37eec0c953258634d9b50d62e08','Etudiant');
+INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Akrour','Sofian','rodul','34560aa09d3eae4ce997fa390d72a05c093339e651ae16a604800c78f65b8956e255c624c518f18ebf6a55dbd8b4f27b7dfeb37eec0c953258634d9b50d62e08','Administrateur');
+INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Gautier','Philipe','Novatouch','34560aa09d3eae4ce997fa390d72a05c093339e651ae16a604800c78f65b8956e255c624c518f18ebf6a55dbd8b4f27b7dfeb37eec0c953258634d9b50d62e08','Administrateur');
+INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Debas','Benoit','Denoi','34560aa09d3eae4ce997fa390d72a05c093339e651ae16a604800c78f65b8956e255c624c518f18ebf6a55dbd8b4f27b7dfeb37eec0c953258634d9b50d62e08','Enseignant');
+INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Aoun','Andre','Aore','34560aa09d3eae4ce997fa390d72a05c093339e651ae16a604800c78f65b8956e255c624c518f18ebf6a55dbd8b4f27b7dfeb37eec0c953258634d9b50d62e08','Enseignant');
+INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Bret','Martial','Breal','34560aa09d3eae4ce997fa390d72a05c093339e651ae16a604800c78f65b8956e255c624c518f18ebf6a55dbd8b4f27b7dfeb37eec0c953258634d9b50d62e08','Enseignant');
+INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Mojahid','Mustapha','Mojpha','34560aa09d3eae4ce997fa390d72a05c093339e651ae16a604800c78f65b8956e255c624c518f18ebf6a55dbd8b4f27b7dfeb37eec0c953258634d9b50d62e08','Enseignant');
+INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Chaouche','Arslane','Chalane','34560aa09d3eae4ce997fa390d72a05c093339e651ae16a604800c78f65b8956e255c624c518f18ebf6a55dbd8b4f27b7dfeb37eec0c953258634d9b50d62e08','Etudiant');
+INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Reno','Pierre','Rere','34560aa09d3eae4ce997fa390d72a05c093339e651ae16a604800c78f65b8956e255c624c518f18ebf6a55dbd8b4f27b7dfeb37eec0c953258634d9b50d62e08','Etudiant');
+INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Uster','Francis','Usis','34560aa09d3eae4ce997fa390d72a05c093339e651ae16a604800c78f65b8956e255c624c518f18ebf6a55dbd8b4f27b7dfeb37eec0c953258634d9b50d62e08','Etudiant');
+INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Mystere','Il','mysl','34560aa09d3eae4ce997fa390d72a05c093339e651ae16a604800c78f65b8956e255c624c518f18ebf6a55dbd8b4f27b7dfeb37eec0c953258634d9b50d62e08','Etudiant');
+INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('No','Name','nome','34560aa09d3eae4ce997fa390d72a05c093339e651ae16a604800c78f65b8956e255c624c518f18ebf6a55dbd8b4f27b7dfeb37eec0c953258634d9b50d62e08','Etudiant');
+INSERT INTO Utilisateurs (nomu,prenomu,pseudo,passwordu,typecompte) VALUES ('Neil','Armstrong','neng','34560aa09d3eae4ce997fa390d72a05c093339e651ae16a604800c78f65b8956e255c624c518f18ebf6a55dbd8b4f27b7dfeb37eec0c953258634d9b50d62e08','Etudiant');
 
 
 
