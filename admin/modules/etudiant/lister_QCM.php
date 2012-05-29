@@ -1,5 +1,5 @@
 <?php
-
+function lister_QCM(){
 // Ce modules récupère la liste des QCM corespondant à un cours
 
 
@@ -48,4 +48,5 @@ pg_close($db_handle);
  $qcm[0]['type'] = "typeDuQcm";*/
 
 echo json_encode($qcm);
+}
 ?>
