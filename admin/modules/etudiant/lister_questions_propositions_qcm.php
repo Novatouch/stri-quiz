@@ -1,5 +1,5 @@
 <?php
-
+function lister_questions_propositions_qcm(){
 // Ce module récupère la liste des questions et des propositions
 
 // vérification que l'utilisateur est authentifié
@@ -87,5 +87,5 @@ $qcm[2]["propositions"][2]["intitule"]= "Nessus" ;
 $qcm[2]["propositions"][3]["id"]= 12;
 $qcm[2]["propositions"][3]["intitule"]=  "OpenVas" ;*/
 echo json_encode($qcm);
-
+}
 ?>
