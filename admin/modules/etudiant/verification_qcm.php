@@ -8,10 +8,12 @@
 
 $reqQ="SELECT idQuiz FROM QUIZ";
 
-int i=0;
+$idQ=$_POST['id_quiz'];
+int j=pg_numrows($result);
 int j=0;
 int s=0;
-for(int i=0;i<
+for(int i=0;i<j;i++)
+{
 	$_GET['id_qcm'];
 	$_GET['question'];
 	$_GET['question'][0]['id'];
@@ -23,7 +25,7 @@ for(int i=0;i<
 	$_GET['question'][1]['proposition'];
 	$_GET['question'][1]['proposition'][0]['id'] ;/*id proposition*/
 	$_GET['question'][1]['proposition'][1]['id'];
-
+}
 
 
 // vérifie que l'utilisateur à bien le droit d'accéder au QCM et recupère typeQCM
@@ -41,7 +43,7 @@ for(int i=0;i<
 	//vérifier si l'utilisateur a coché aucune réponse isset($_GET['question'][x]['proposition']))
  	//récupération des id des bonne réponses
 
-		// Si le typede qcm est examen enregistrement des propositions validés par l'utilsateur
+		// Si le type de qcm est examen enregistrement des propositions validés par l'utilsateur
 	
 	// mise à jour du compteur de points
 
