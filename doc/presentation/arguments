@@ -1,0 +1,62 @@
+Concception
+
+Présentation du MCD
+	fonctionnalités
+
+Présentation des technologies
+	- structure du site (schéma controler, modules, interfaces, arboresence interet)
+	- technologies jquery, php postgreSQL
+		interets ...
+Gestion projets
+
+-> Conception
+	
+	Risque 
+		effet de bord lors du codage
+		sous utilisation de ressources
+		
+	séparation de l'algorithme et de la technique vision globale
+		- MCD
+		- diagramme de séquence 
+		- structure précise des projets
+	avantages
+		
+Interet 
+	Interet pour le groupe
+		bone utilisation des ressources humaines
+		affectation des ressources plus flexible
+	Transfert de compétences entre les membres du groupe
+
+	suivi plus serein
+	une prévision de la durée des taches plus simples et réalistion amélioré
+		, 
+	reprise de travail
+	possibiliter de rajouter une ressource au projet
+	Clarté
+
+
+Presentation de GIT
+	- 
+
+-> dans les faits 
+	erreur base de donnée
+		solution: deux personnes sur la même tache, mettre en place des taches de validation par d'utres membres
+
+	Retour microsoft project
+		Projet court et à deux pas vraiment intéressant pour apprécier avantages
+		dans les faits
+		Vsions sur l'avenir 
+			- appréciation de l'avancement module administrateur supprimé pour finir à temps
+		Outils peu flexible 
+			taches réalisés en parrallèle modifications difficile
+			
+
+Avantages
+	- éviter les pertes de temps du aux effets de bords entre les différentes parties
+	- 
+
+Résultats
+	Exécution scénario utilisation.
+Bilan personnel
+
+	
