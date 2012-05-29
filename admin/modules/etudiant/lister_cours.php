@@ -1,51 +1,54 @@
 <?php
-function  lister_cours(){
+
+// connection au serveur bd
+include_once($document_root."/admin/fonctions/connection_bd.php");
+session_start();
 // Ce modules récupère la liste des cours corespondant à une matière et dont l'utilisateur à accès
 
 // récupération des variables de sessions contenant l'id de l'utilisateur
 
-// récupération de l'id de la matière passée par un paramètre de type POST nom variable $_POST['idMatiere']
-$id_Matiere = $_POST['idMatiere'];
-
+// récupération de l'id de la matière passée par un paramètre de type GET nom variable $_GET['idMatiere']
+$id_Matiere = $_GET['idMatiere'];
+$idUtilisateur= $_SESSION['idUtilisateur'];
 // requête à la base de donnée 
 
-$db_handle = pg_connect("BD_PROJET=$BD_PROJET");
-if ($db_handle) {
-echo 'connexion réussi.';
-} else {
-echo 'connexion échoué.';
-}
-$req = "SELECT idCours, nomC FROM COURS,MATIERES,FORMATIONS,GROUPES,UTILISATEURS,ACCEDER,AppartenirGroupe WHERE COURS.idMatiere=MATIERES.idMatieres AND ACCEDER.idMatieres=MATIERES.idMatieres AND FORMATIONS.idFormation=ACCEDER.idFormation
-AND GROUPES.idFormation=FORMATIONS.idFormation AND AppartenirGroupe.idGroupe=GROUPES.idGroupe AND AppartenirGroupe.idUtilisateurs=UTILISATEURS.idUtilisateurs AND idMatieres=$id_Matiere";
+
+$req = "SELECT c.idCours, c.nomC FROM Utilisateurs u
+INNER JOIN AppartenirGroupe ag 	ON u.idUtilisateur = ag.idUtilisateur
+INNER JOIN Groupes g 		ON ag.idGroupe = g.idGroupe
+INNER JOIN Formations fo		ON g.idFormation = fo.idFormation
+INNER JOIN Acceder ac		ON fo.idFormation = ac.idFormation		
+INNER JOIN Matieres m		ON ac.idMatiere =  m.idMatiere
+INNER JOIN Cours c		ON m.idMatiere = c.idMatiere
+WHERE	u.idUtilisateur = '$idUtilisateur'
+AND	m.idMatiere =  '$id_Matiere'";
+
 $result = pg_exec($db_handle, $req);
 
 $nbcolonne=pg_numrows($result);
-if ($result) {
-echo "La requête s'est bien executer.<br>\n";
-for ($row = 0; $row < $nbcolonne; $row++) {
-$values = pg_fetch_object($result, $row, PGSQL_ASSOC);
-$idCours = $values->idCours . " ";
-$nomCours .= $values->nomCours . " ";
-$cours[$row][$idCours] = $idCours;
- $cours[$row][$nomCours] = $nomCours;
- }
-else {
-echo "La requête à rencontrer une erreur:<br>\n";
-echo pg_errormessage($db_handle);
-}
 
-pg_freeresult($result);
-pg_close($db_handle);
-
-// traitement des résultats et fabrication de l'objet JSON
-if(!isset($_POST['idMatiere']))
+if ($result) 
 {
-$bool= "existepas";
+	
+	for ($row = 0; $row < $nbcolonne; $row++) 
+	{
+		$values = pg_fetch_array($result, $row,PGSQL_ASSOC);
+		$idCours = $values['idcours'];
+		$nomCours = $values['nomc'];
+		$cours[$row]['id'] = $idCours;
+		$cours[$row]['nom'] = $nomCours;
+	}
 }
 else
 {
-	$bool= $_POST['idMatiere'];
+	echo "La requête à rencontrer une erreur:<br>\n";
+	echo pg_errormessage($db_handle);
 }
+
+pg_freeresult($result);
+
+
+
 /* $cours[0]['id'] = 1;
  $cours[0]['nom'] = $bool;
  $cours[1]['id'] = 2;
@@ -56,5 +59,5 @@ else
  $cours[3]['nom'] = "iptables avancée";*/
 
  echo json_encode($cours);
-}
+
 ?>

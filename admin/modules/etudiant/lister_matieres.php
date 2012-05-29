@@ -1,44 +1,48 @@
 <?php
-function  lister_matieres(){
+
 // Ce module récupère la liste des matières auquels l'étudiant a accès
+include_once($document_root."/admin/fonctions/connection_bd.php");
+session_start();
 
-// récupération variable de type POST $_POST["id_matière"] 
 
-$id_M= $_POST["id_matière"] ;
 
 // récupération des variables de sessions contenant l'id de l'utilisateur
-
+$idUtilisateur= $_SESSION['idUtilisateur'];
 
 // requête à la base de donnée 
 
-$db_handle = pg_connect("BD_PROJET=$BD_PROJET");
-if ($db_handle) {
-echo 'connexion réussi.';
-} else {
-echo 'connexion échoué.';
-}
-$req = "SELECT idMatiere FROM MATIERES,ACCEDER,UTILISATEURS,FORMATIONS,GROUPE WHERE MATIERES.idMatiere=ACCEDER.idMatiere 
-AND ACCEDER.idFormation=FORMATIONS.idFormation AND GROUPES.idFormation=FORMATIONS.idFormation AND GROUPES.idGroupe=AppartenirGroupe.idGroupe AND UTILISATEURS.idUtilisateurs=UTILISATEURS.idUtilisateurs AND idMatiere=$id_M ";
+
+$req = "SELECT m.idMatiere, m.nomM FROM Utilisateurs u
+INNER JOIN AppartenirGroupe ag 	ON u.idUtilisateur = ag.idUtilisateur
+INNER JOIN Groupes g 		ON ag.idGroupe = g.idGroupe
+INNER JOIN Formations fo		ON g.idFormation = fo.idFormation
+INNER JOIN Acceder ac		ON fo.idFormation = ac.idFormation		
+INNER JOIN Matieres m		ON ac.idMatiere =  m.idMatiere
+WHERE	u.idUtilisateur = '$idUtilisateur'";
+
 $result = pg_exec($db_handle, $req);
 
 $nbcolonne=pg_numrows($result);
-if ($result) {
-echo "La requête s'est bien executer.<br>\n";
-for ($row = 0; $row < $nbcolonne; $row++) {
-$values = pg_fetch_object($result, $row, PGSQL_ASSOC);
-$idm = $values->idMatiere . " ";
-$nomm .= $values->nomM . " ";
-$matieres[$row][$idm] = $idm;
- $matieres[$row][$nomm ] = $nomm ;
 
- }
-else {
-echo "La requête à rencontrer une erreur:<br>\n";
-echo pg_errormessage($db_handle);
+if ($result) 
+{
+	for ($row = 0; $row < $nbcolonne; $row++) 
+	{
+		$values = pg_fetch_array($result, $row, PGSQL_ASSOC);
+		$idm = $values['idmatiere'];
+		$nomm = $values['nomm'];
+		$matieres[$row]['id'] = $idm;
+		$matieres[$row]['nom'] = $nomm ;
+
+ 	}
+}
+else 
+{
+	echo "La requête à rencontrer une erreur:<br>\n";
+	echo pg_errormessage($db_handle);
 }
 
-pg_freeresult($result);
-pg_close($db_handle);
+
 
 // traitement des résultats et fabrication de l'objet JSON
 
@@ -48,5 +52,5 @@ pg_close($db_handle);
  $matieres[1]['nom'] = "Sécurité";*/
 
 echo json_encode($matieres);
-}
+
 ?>

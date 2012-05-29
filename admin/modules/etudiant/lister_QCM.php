@@ -1,42 +1,66 @@
 <?php
-function lister_QCM(){
 // Ce modules récupère la liste des QCM corespondant à un cours
 
+// connection au serveur bd
+include_once($document_root."/admin/fonctions/connection_bd.php");
+session_start();
+
+// récupé
+$idCours=$_GET['idCours'];
+$idUtilisateur= $_SESSION['idUtilisateur'];
+
+// requête à la base de donnée 
 
 
-// récupération de l'id du cours passée par un paramètre de type POST nom variable $_GET['id_cours']
+$req = "SELECT c.idCours FROM Utilisateurs u
+INNER JOIN AppartenirGroupe ag 	ON u.idUtilisateur = ag.idUtilisateur
+INNER JOIN Groupes g 		ON ag.idGroupe = g.idGroupe
+INNER JOIN Formations fo	ON g.idFormation = fo.idFormation
+INNER JOIN Acceder ac		ON fo.idFormation = ac.idFormation		
+INNER JOIN Matieres m		ON ac.idMatiere =  m.idMatiere
+INNER JOIN Cours c		ON m.idMatiere = c.idMatiere
+WHERE	u.idUtilisateur ='$idUtilisateur' 
+AND	c.idCours = '$idCours'";
 
-$id_courstrait=$_POST['id_cours'];
-/*vu que c'est une methode POST*/
-
-// requête à la base de donnée pour récupérer les id des QCM et les noms des QCM et les types de qcm
-
-/*où $BD_PROJET est le nom de la variable qui contient le nom de la BD*/
-$db_handle = pg_connect("BD_PROJET=$BD_PROJET");
-if ($db_handle) {
-echo 'connexion réussi.';
-} else {
-echo 'connexion échoué.';
-}
-$req = "SELECT id_Quiz, nomQ, typeQuizz FROM QUIZ,COURS WHERE COURS.idCours=QUIZ.idCours AND idCours= $id_courstrait";
 $result = pg_exec($db_handle, $req);
 
-$nbcolonne=pg_numrows($result);
-if ($result) {
-echo "La requête s'est bien executer.<br>\n";
-for ($row = 0; $row < $nbcolonne; $row++) {
-$values = pg_fetch_object($result, $row, PGSQL_ASSOC);
-$idQ = $values->idQuiz . " ";
-$nom .= $values->nomQ . " ";
-$typeQ .= $values->typeQuizz;
-$qcm[$row][$idQ] = $idQ;
- $qcm[$row][$nom] = $nom;
- $qcm[$row][$typeQ] = $typeQ ;
+
+
+if($result) 
+{	
+	$nombre=pg_numrows($result);
+
+	if($nombre == 1)
+	{
+	
+			$req = "SELECT q.idQuiz, q.nomQ, q.typeQuiz, tempsEpreuve FROM Quiz q
+				INNER JOIN Cours c ON c.idCours =  q.idCours
+				WHERE c.idCours = '$idCours'";
+
+			$result = pg_exec($db_handle, $req);
+
+			if($result)
+			{
+				$nombre=pg_numrows($result);
+	
+				for ($row = 0; $row < $nombre; $row++) 
+				{
+					$values = pg_fetch_array($result, $row, PGSQL_ASSOC);
+					$idQ = $values['idquiz'];
+					$nom = $values['nomq'];
+					$typeQ = $values['typequiz']; 
+					$qcm[$row]['id'] = $idQ;
+					$qcm[$row]['nom'] = $nom;
+					$qcm[$row]['type'] = $typeQ ;
+				}
+			
+				echo json_encode($qcm);
+			}
+		
+	}
 }
-else {
-echo "La requête à rencontrer une erreur:<br>\n";
-echo pg_errormessage($db_handle);
-}
+
+
 
 pg_freeresult($result);
 pg_close($db_handle);
@@ -47,6 +71,6 @@ pg_close($db_handle);
  $qcm[0]['nom'] = "NomQcm";
  $qcm[0]['type'] = "typeDuQcm";*/
 
-echo json_encode($qcm);
-}
+
+
 ?>
