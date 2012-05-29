@@ -6,7 +6,7 @@
 
 // Récupération du paramètre $_GET, organisation de l'array
 
-
+$reqQ="SELECT idQuiz FROM QUIZ";
 
 int i=0;
 int j=0;
