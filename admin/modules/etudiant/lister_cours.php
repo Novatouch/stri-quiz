@@ -5,9 +5,11 @@
 // récupération des variables de sessions contenant l'id de l'utilisateur
 
 // récupération de l'id de la matière passée par un paramètre de type POST nom variable $_POST['id_module']
-
+$id_Matiere = $_POST['idMatiere'];
 
 // requête à la base de donnée 
+
+
 
 // traitement des résultats et fabrication de l'objet JSON
 if(!isset($_GET['idmodule']))
