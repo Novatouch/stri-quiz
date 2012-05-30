@@ -249,11 +249,28 @@ ul#menu li a:hover
 	display: inline-block; 
 	vertical-align: top;
 width:860px;
+	height:500px;
 
 	
 	text-align: left;
   padding: 20px 10px 15px 20px;
 }
+
+#content form
+{
+	margin:20px;
+	margin-top:50px;
+	text-align:left;
+}
+
+#log label
+{
+	display: block;
+	width: 150px;
+	float: left;
+}
+
+
 
 #footer
 {
