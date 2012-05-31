@@ -297,30 +297,13 @@ INSERT INTO Fichiers (nomF,lien,idcours) VALUES ('matrice.pdf','fichiers/matrice
 SELECT * FROM Quiz;
 INSERT INTO Quiz (nomq,idcours,typequiz) VALUES('guide sécurité',1,'entrainement');
 
-
-
---**************INSERTION DANS LA TABLE QUESTIONS*****************************************
-
-INSERT INTO Questions (intituleQ) VALUES ('Quelles sont les opérations basiques à réaliser pour sécuriser une machine utlisant Windows');
-INSERT INTO Questions (intituleQ) VALUES ('Qu''est ce qu''un scanneur de ports?');
-INSERT INTO Questions (intituleQ) VALUES ('Lequel de ces logiciels est un scanneur de ports ?');
-
-INSERT INTO Questions (intituleQ) VALUES ('Lesquels de ces scans ne nécessite pas les droits d''administrateur?');
-
-
---**************INSERTION DANS LA TABLE CONTENIRQUESTION**********************************************
---SELECT * FROM ContenirQuestion;
-INSERT INTO ContenirQuestion VALUES ('1','1');
-INSERT INTO ContenirQuestion VALUES ('2','1');
-INSERT INTO ContenirQuestion VALUES ('3','1');
-INSERT INTO ContenirQuestion VALUES ('4','1');
-
 --*************INSERTION DANS LA BASE PROPOSITIONS***************************************
 --SELECT * FROM Propositions;
 INSERT INTO Propositions (intituleProp) VALUES ('Configurer un mot de passe pour le BIOS.');
 INSERT INTO Propositions (intituleProp) VALUES ('Utilier système de fichier performant FAT32.');
 INSERT INTO Propositions (intituleProp) VALUES ('Désactiver le boot sir disquette et CDROM.');
 INSERT INTO Propositions (intituleProp) VALUES ('Configurer un mot de passe pour le BIOS.');
+
 INSERT INTO Propositions (intituleProp) VALUES ('Un logiciel pouvant permettre de connaitre les services offerts par un serveur.');
 INSERT INTO Propositions (intituleProp) VALUES ('Un logiciel permettant de protéger ses ports.');
 INSERT INTO Propositions (intituleProp) VALUES ('Un outils intégré dans une imprimante multifonction.');
@@ -335,6 +318,60 @@ INSERT INTO Propositions (intituleProp) VALUES ('XMAS scan');
 INSERT INTO Propositions (intituleProp) VALUES ('scan fin');
 INSERT INTO Propositions (intituleProp) VALUES ('scan syn');
 INSERT INTO Propositions (intituleProp) VALUES ('vanilla TCP connect');
+
+
+INSERT INTO Propositions (intituleProp) VALUES ('iptables -A FORWARD -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limit 1/s -j ACCEPT');
+INSERT INTO Propositions (intituleProp) VALUES ('iptables -A INPUT -s 188.165.52.27 -j DROP');
+INSERT INTO Propositions (intituleProp) VALUES ('iptables -t filter -F');
+INSERT INTO Propositions (intituleProp) VALUES ('iptables -t filter -A OUTPUT --jump DROP');
+
+INSERT INTO Propositions (intituleProp) VALUES ('un outils de défense contre les intrusions réseaux');
+INSERT INTO Propositions (intituleProp) VALUES ('un virus célébre');
+INSERT INTO Propositions (intituleProp) VALUES ('une technique de piratage');
+INSERT INTO Propositions (intituleProp) VALUES ('un protocole sécurisé');
+
+INSERT INTO Propositions (intituleProp) VALUES ('le premier est obsoléte');
+INSERT INTO Propositions (intituleProp) VALUES ('aucune');
+INSERT INTO Propositions (intituleProp) VALUES ('le firewall est l''entité résidente et le parefeu est le client se connectant à celle-ci');
+
+
+INSERT INTO Propositions (intituleProp) VALUES ('un dangeureux pirate  arrété par le FBI');
+INSERT INTO Propositions (intituleProp) VALUES ('l''auteur du rapport ""Weakness in the 4.2BSD Unix TCP/IP software"" paru en 1985 et alertant de la posibilité d''une attaque de type ip spofing');
+INSERT INTO Propositions (intituleProp) VALUES ('l''inventeur du firewall');
+INSERT INTO Propositions (intituleProp) VALUES ('le cofondateur de Cisco');
+
+INSERT INTO Propositions (intituleProp) VALUES ('telnet');
+INSERT INTO Propositions (intituleProp) VALUES ('ssh');
+INSERT INTO Propositions (intituleProp) VALUES ('rsh');
+INSERT INTO Propositions (intituleProp) VALUES ('rlogin');
+
+--**************INSERTION DANS LA TABLE QUESTIONS*****************************************
+
+INSERT INTO Questions (intituleQ) VALUES ('Quelles sont les opérations basiques à réaliser pour sécuriser une machine utlisant Windows');
+INSERT INTO Questions (intituleQ) VALUES ('Qu''est ce qu''un scanneur de ports?');
+INSERT INTO Questions (intituleQ) VALUES ('Lequel de ces logiciels est un scanneur de ports ?');
+
+INSERT INTO Questions (intituleQ) VALUES ('Lesquels de ces scans ne nécessite pas les droits d''administrateur?');
+
+INSERT INTO Questions (intituleQ) VALUES ('Selectionner la commande permettant de ce protéger des scannners de ports?');
+
+INSERT INTO Questions (intituleQ) VALUES ('Qu''est ce qu''un firewall?');
+INSERT INTO Questions (intituleQ) VALUES ('Quelle(s) différence(s) y a-t-il entre firewall et un parefeu?');
+
+INSERT INTO Questions (intituleQ) VALUES ('Qui est kévin Mitnick ?');
+
+INSERT INTO Questions (intituleQ) VALUES ('Lequel de ces logiciels de connexion à distance doit être privilégié par rapport aux autres:');
+
+--**************INSERTION DANS LA TABLE CONTENIRQUESTION**********************************************
+--SELECT * FROM ContenirQuestion;
+INSERT INTO ContenirQuestion VALUES ('1','1');
+INSERT INTO ContenirQuestion VALUES ('2','1');
+INSERT INTO ContenirQuestion VALUES ('3','1');
+INSERT INTO ContenirQuestion VALUES ('4','1');
+INSERT INTO ContenirQuestion VALUES ('5','1');
+INSERT INTO ContenirQuestion VALUES ('6','1');
+INSERT INTO ContenirQuestion VALUES ('7','1');
+INSERT INTO ContenirQuestion VALUES ('8','1');
 
 --ProposerReponse(#idQuestion,#idProposition,point,exact)
 --SELECT * FROM ProposerReponse;
@@ -354,11 +391,33 @@ INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','10','f
 INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','11','true'); 
 INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','12','false'); 
 
-INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','13','false'); 
-INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','14','false'); 
-INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','15','false'); 
-INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('3','16','true'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('4','13','false'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('4','14','false'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('4','15','false'); 
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('4','16','true'); 
 
+
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('5','17','true'); 
+
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('5','18','false');
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('5','19','false'); 
+
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('5','20','false'); 
+
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('6','21','false');
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('6','22','true');
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('6','23','false');
+
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('7','24','true');
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('7','25','false');
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('7','26','false');
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('7','27','false');
+
+
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('8','28','false');
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('8','29','true');
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('8','30','false');
+INSERT INTO ProposerReponse (idQuestion,idProposition,exact) VALUES ('8','31','false');
 
 --**************INSERTION DANS LA TABLE PARTICIPER**********************************************
 
