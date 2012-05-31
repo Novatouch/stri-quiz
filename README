@@ -12,7 +12,7 @@ Le script d'importation de la BD se situe dans BD/BD.sql
 Les identifiants de connexion à la BD sont configurés dans le fichier config/config.php
 
 
-# identifiants connexion interface web
+# identifiants interface web
 
 	etudiant 	identifiant 	: crin 	mot de passe: azerty
 	administrateur	identifiant	: rodul	mot de passe: azerty
