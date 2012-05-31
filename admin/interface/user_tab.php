@@ -5,9 +5,9 @@
 	if (isset($_SESSION['idUtilisateur']))
 	{
 		echo "<h3>Bonjour ".$_SESSION['pseudo']."  !</h3>";
-		echo "<p>Prenom:  ".$_SESSION['Prenom']."   </p>";
+		echo "<p>Prénom:  ".$_SESSION['Prenom']."   </p>";
 		echo "<p>Nom: ".$_SESSION['Nom']."   </p>";
-		echo "<p>Role: ".$_SESSION['typeDeCompte']."  </p>";
+		echo "<p>Rôle: ".$_SESSION['typeDeCompte']."  </p>";
 		
 		echo '<p><a href="admin/controler/controler_authentification.php?module=deconnexion"> Déconnecté </a></p>';
 	}

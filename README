@@ -1,1 +1,19 @@
-pouet
+# installation de la plateforme
+
+	# installer la bd
+	# modifier les identifiants d'accès au serveur de base de donnée
+
+# importation de la bd
+
+Le script d'importation de la BD se situe dans BD/BD.sql
+
+# modifications identifiants
+
+Les identifiants de connexion à la BD sont configurés dans le fichier config/config.php
+
+
+# identifiants connexion interface web
+
+	etudiant 	identifiant 	: crin 	mot de passe: azerty
+	administrateur	identifiant	: rodul	mot de passe: azerty
+	enseignant	identifiant	: Aore  mot de passe: azerty
